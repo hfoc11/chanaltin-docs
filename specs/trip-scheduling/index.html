@@ -1,210 +1,108 @@
 
-<!doctype html>
-<html lang="en" class="no-js">
-  <head>
-    
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-        <meta name="description" content="Documentación de requerimientos de Chanaltín">
-      
-      
-      
-        <link rel="canonical" href="https://hfoc11.github.io/specs/trip-scheduling/">
-      
-      
-        <link rel="prev" href="../">
-      
-      
-        <link rel="next" href="../inventory-fuel/">
-      
-      
-        
-      
-      
-      <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
-    
-    
-      
-        <title>1. Programación de Viajes - Chanaltín Docs</title>
-      
-    
-    
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
-      
-      
+<!DOCTYPE html>
 
-
-    
-    
-      
-    
-    
-      
-        
-        
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
-      
-    
-    
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
-    
-      
-
-    
-    
-  </head>
-  
-  
-    <body dir="ltr">
-  
-    
-    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
-    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
-    <label class="md-overlay" for="__drawer"></label>
-    <div data-md-component="skip">
-      
-        
-        <a href="#1-sistema-avanzado-de-programacion-de-viajes-trip-scheduling" class="md-skip">
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Documentación de requerimientos de Chanaltín" name="description"/>
+<link href="https://hfoc11.github.io/specs/trip-scheduling/" rel="canonical"/>
+<link href="../" rel="prev"/>
+<link href="../inventory-fuel/" rel="next"/>
+<link href="../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.7.6" name="generator"/>
+<title>1. Programación de Viajes - Chanaltín Docs</title>
+<link href="../../assets/stylesheets/main.484c7ddc.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#1-sistema-avanzado-de-programacion-de-viajes-trip-scheduling">
           Skip to content
         </a>
-      
-    </div>
-    <div data-md-component="announce">
-      
-    </div>
-    
-    
-      
-
-  
-
+</div>
+<div data-md-component="announce">
+</div>
 <header class="md-header md-header--shadow" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Chanaltín Docs" class="md-header__button md-logo" aria-label="Chanaltín Docs" data-md-component="logo">
-      
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
-
-    </a>
-    <label class="md-header__button md-icon" for="__drawer">
-      
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
-    </label>
-    <div class="md-header__title" data-md-component="header-title">
-      <div class="md-header__ellipsis">
-        <div class="md-header__topic">
-          <span class="md-ellipsis">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="Chanaltín Docs" class="md-header__button md-logo" data-md-component="logo" href="../.." title="Chanaltín Docs">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
             Chanaltín Docs
           </span>
-        </div>
-        <div class="md-header__topic" data-md-component="header-topic">
-          <span class="md-ellipsis">
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
             
               1. Programación de Viajes
             
           </span>
-        </div>
-      </div>
-    </div>
-    
-    
-      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
-    
-    
-    
-      
-      
-        <label class="md-header__button md-icon" for="__search">
-          
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
-        </label>
-        <div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="__search"></label>
-  <div class="md-search__inner" role="search">
-    <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
-      <label class="md-search__icon md-icon" for="__search">
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
-      </label>
-      <nav class="md-search__options" aria-label="Search">
-        
-        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
-          
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
-        </button>
-      </nav>
-      
-    </form>
-    <div class="md-search__output">
-      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="search-result">
-          <div class="md-search-result__meta">
+</div>
+</div>
+</div>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
             Initializing search
           </div>
-          <ol class="md-search-result__list" role="presentation"></ol>
-        </div>
-      </div>
-    </div>
-  </div>
+<ol class="md-search-result__list" role="presentation"></ol>
 </div>
-      
-    
-    
-  </nav>
-  
+</div>
+</div>
+</div>
+</div>
+</nav>
 </header>
-    
-    <div class="md-container" data-md-component="container">
-      
-      
-        
-          
-        
-      
-      <main class="md-main" data-md-component="main">
-        <div class="md-main__inner md-grid">
-          
-            
-              
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-
-
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
-  <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Chanaltín Docs" class="md-nav__button md-logo" aria-label="Chanaltín Docs" data-md-component="logo">
-      
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
-
-    </a>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Chanaltín Docs" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="Chanaltín Docs">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
     Chanaltín Docs
   </label>
-  
-  <ul class="md-nav__list" data-md-scrollfix>
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+<span class="md-ellipsis">
     
   
     Home
@@ -212,39 +110,12 @@
 
     
   </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-    
-  
-  
-  
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+<span class="md-ellipsis">
     
   
     Especificaciones
@@ -252,35 +123,21 @@
 
     
   </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_2">
-            <span class="md-nav__icon md-icon"></span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
             
   
     Especificaciones
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../">
+<span class="md-ellipsis">
     
   
     Índice
@@ -288,36 +145,12 @@
 
     
   </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
     
   
     1. Programación de Viajes
@@ -325,17 +158,10 @@
 
     
   </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  
-  <span class="md-ellipsis">
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
     
   
     1. Programación de Viajes
@@ -343,102 +169,269 @@
 
     
   </span>
-  
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
+</a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#gestion-de-flota-y-operaciones-avanzadas">
+<span class="md-ellipsis">
       
-        <li class="md-nav__item">
-  <a href="#gestion-de-insumos-para-la-programacion" class="md-nav__link">
-    <span class="md-ellipsis">
+        Gestión de Flota y Operaciones Avanzadas
+      
+    </span>
+</a>
+<nav aria-label="Gestión de Flota y Operaciones Avanzadas" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#modulos-de-odoo-involucrados">
+<span class="md-ellipsis">
+      
+        Módulos de Odoo Involucrados
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#enfoque-de-arquitectura">
+<span class="md-ellipsis">
+      
+        Enfoque de Arquitectura
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#gestion-de-insumos-para-la-programacion">
+<span class="md-ellipsis">
       
         Gestión de Insumos para la Programación
       
     </span>
-  </a>
-  
+</a>
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#motor-de-validaciones-criticas" class="md-nav__link">
-    <span class="md-ellipsis">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#motor-de-validaciones-criticas">
+<span class="md-ellipsis">
       
         Motor de Validaciones Críticas
       
     </span>
-  </a>
-  
+</a>
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#ejecucion-y-seguimiento-de-viaje" class="md-nav__link">
-    <span class="md-ellipsis">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejecucion-y-seguimiento-de-viaje">
+<span class="md-ellipsis">
       
         Ejecución y Seguimiento de Viaje
       
     </span>
-  </a>
-  
+</a>
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#cierre-operativo-y-data-sucia" class="md-nav__link">
-    <span class="md-ellipsis">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cierre-operativo-y-data-sucia">
+<span class="md-ellipsis">
       
         Cierre Operativo y Data Sucia
       
     </span>
-  </a>
-  
+</a>
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#integracion-con-planilla-y-contabilidad" class="md-nav__link">
-    <span class="md-ellipsis">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#integracion-con-planilla-y-contabilidad">
+<span class="md-ellipsis">
       
         Integración con Planilla y Contabilidad
       
     </span>
-  </a>
-  
+</a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#propuesta-de-nuevos-modelos-y-campos">
+<span class="md-ellipsis">
       
-    </ul>
-  
+        Propuesta de Nuevos Modelos y Campos
+      
+    </span>
+</a>
+<nav aria-label="Propuesta de Nuevos Modelos y Campos" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#diagrama-de-clases">
+<span class="md-ellipsis">
+      
+        Diagrama de Clases
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#flujo-de-validacion-de-viaje">
+<span class="md-ellipsis">
+      
+        Flujo de Validación de Viaje
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#integracion-funcional-con-odoo">
+<span class="md-ellipsis">
+      
+        Integración Funcional con Odoo
+      
+    </span>
+</a>
+</li>
+</ul>
 </nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#detalle-de-campos-criticos">
+<span class="md-ellipsis">
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../inventory-fuel/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+        Detalle de Campos Críticos
+      
+    </span>
+</a>
+<nav aria-label="Detalle de Campos Críticos" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#a-chanaltintrip-viaje-nuevo">
+<span class="md-ellipsis">
+      
+        A. chanaltin.trip (Viaje) - Nuevo
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#b-chanaltinroute-ruta-nuevo">
+<span class="md-ellipsis">
+      
+        B. chanaltin.route (Ruta) - Nuevo
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#c-extensiones-a-fleetvehicle">
+<span class="md-ellipsis">
+      
+        C. Extensiones a fleet.vehicle
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#d-extensiones-a-hremployee">
+<span class="md-ellipsis">
+      
+        D. Extensiones a hr.employee
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#e-chanaltinchecklist-checklist-nuevo-o-integrado-con-fsm">
+<span class="md-ellipsis">
+      
+        E. chanaltin.checklist (Checklist) - Nuevo o Integrado con FSM
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#f-chanaltinincident-incidenciaspapeletas-nuevo">
+<span class="md-ellipsis">
+      
+        F. chanaltin.incident (Incidencias/Papeletas) - Nuevo
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#consideraciones-de-logica">
+<span class="md-ellipsis">
+      
+        Consideraciones de Lógica
+      
+    </span>
+</a>
+<nav aria-label="Consideraciones de Lógica" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#validacion-documental">
+<span class="md-ellipsis">
+      
+        Validación Documental
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#regla-de-descanso">
+<span class="md-ellipsis">
+      
+        Regla de Descanso
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bloqueo-por-mantenimiento">
+<span class="md-ellipsis">
+      
+        Bloqueo por Mantenimiento
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#flujo-propio-vs-tercerizado">
+<span class="md-ellipsis">
+      
+        Flujo Propio vs. Tercerizado
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#analitica-y-rentabilidad">
+<span class="md-ellipsis">
+      
+        Analítica y Rentabilidad
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#criterio-de-diseno">
+<span class="md-ellipsis">
+      
+        Criterio de Diseño
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../inventory-fuel/">
+<span class="md-ellipsis">
     
   
     1.5 Inventario y Surtidor
@@ -446,27 +439,11 @@
 
     
   </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../gps-integration/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../gps-integration/">
+<span class="md-ellipsis">
     
   
     2. Integración GPS
@@ -474,27 +451,11 @@
 
     
   </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../dirty-data-kpis/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../dirty-data-kpis/">
+<span class="md-ellipsis">
     
   
     3. Data Sucia y KPIs
@@ -502,27 +463,11 @@
 
     
   </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../drivers-safety/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../drivers-safety/">
+<span class="md-ellipsis">
     
   
     4. Conductores y Seguridad
@@ -530,27 +475,11 @@
 
     
   </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../operational-checklists/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../operational-checklists/">
+<span class="md-ellipsis">
     
   
     5. Checklists Operativos
@@ -558,27 +487,11 @@
 
     
   </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../third-party-freight/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../third-party-freight/">
+<span class="md-ellipsis">
     
   
     6. Gestión de Terceros
@@ -586,34 +499,14 @@
 
     
   </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../diagrams/architecture/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../diagrams/architecture/">
+<span class="md-ellipsis">
     
   
     Diagramas
@@ -621,26 +514,11 @@
 
     
   </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../adr/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../adr/">
+<span class="md-ellipsis">
     
   
     ADRs
@@ -648,114 +526,303 @@
 
     
   </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-  </ul>
+</a>
+</li>
+</ul>
 </nav>
-                  </div>
-                </div>
-              </div>
-            
-            
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#gestion-de-flota-y-operaciones-avanzadas">
+<span class="md-ellipsis">
       
-        <li class="md-nav__item">
-  <a href="#gestion-de-insumos-para-la-programacion" class="md-nav__link">
-    <span class="md-ellipsis">
+        Gestión de Flota y Operaciones Avanzadas
+      
+    </span>
+</a>
+<nav aria-label="Gestión de Flota y Operaciones Avanzadas" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#modulos-de-odoo-involucrados">
+<span class="md-ellipsis">
+      
+        Módulos de Odoo Involucrados
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#enfoque-de-arquitectura">
+<span class="md-ellipsis">
+      
+        Enfoque de Arquitectura
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#gestion-de-insumos-para-la-programacion">
+<span class="md-ellipsis">
       
         Gestión de Insumos para la Programación
       
     </span>
-  </a>
-  
+</a>
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#motor-de-validaciones-criticas" class="md-nav__link">
-    <span class="md-ellipsis">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#motor-de-validaciones-criticas">
+<span class="md-ellipsis">
       
         Motor de Validaciones Críticas
       
     </span>
-  </a>
-  
+</a>
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#ejecucion-y-seguimiento-de-viaje" class="md-nav__link">
-    <span class="md-ellipsis">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ejecucion-y-seguimiento-de-viaje">
+<span class="md-ellipsis">
       
         Ejecución y Seguimiento de Viaje
       
     </span>
-  </a>
-  
+</a>
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#cierre-operativo-y-data-sucia" class="md-nav__link">
-    <span class="md-ellipsis">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cierre-operativo-y-data-sucia">
+<span class="md-ellipsis">
       
         Cierre Operativo y Data Sucia
       
     </span>
-  </a>
-  
+</a>
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#integracion-con-planilla-y-contabilidad" class="md-nav__link">
-    <span class="md-ellipsis">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#integracion-con-planilla-y-contabilidad">
+<span class="md-ellipsis">
       
         Integración con Planilla y Contabilidad
       
     </span>
-  </a>
-  
+</a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#propuesta-de-nuevos-modelos-y-campos">
+<span class="md-ellipsis">
       
-    </ul>
-  
+        Propuesta de Nuevos Modelos y Campos
+      
+    </span>
+</a>
+<nav aria-label="Propuesta de Nuevos Modelos y Campos" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#diagrama-de-clases">
+<span class="md-ellipsis">
+      
+        Diagrama de Clases
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#flujo-de-validacion-de-viaje">
+<span class="md-ellipsis">
+      
+        Flujo de Validación de Viaje
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#integracion-funcional-con-odoo">
+<span class="md-ellipsis">
+      
+        Integración Funcional con Odoo
+      
+    </span>
+</a>
+</li>
+</ul>
 </nav>
-                  </div>
-                </div>
-              </div>
-            
-          
-          
-            <div class="md-content" data-md-component="content">
-              
-              <article class="md-content__inner md-typeset">
-                
-                  
-
-
-
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#detalle-de-campos-criticos">
+<span class="md-ellipsis">
+      
+        Detalle de Campos Críticos
+      
+    </span>
+</a>
+<nav aria-label="Detalle de Campos Críticos" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#a-chanaltintrip-viaje-nuevo">
+<span class="md-ellipsis">
+      
+        A. chanaltin.trip (Viaje) - Nuevo
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#b-chanaltinroute-ruta-nuevo">
+<span class="md-ellipsis">
+      
+        B. chanaltin.route (Ruta) - Nuevo
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#c-extensiones-a-fleetvehicle">
+<span class="md-ellipsis">
+      
+        C. Extensiones a fleet.vehicle
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#d-extensiones-a-hremployee">
+<span class="md-ellipsis">
+      
+        D. Extensiones a hr.employee
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#e-chanaltinchecklist-checklist-nuevo-o-integrado-con-fsm">
+<span class="md-ellipsis">
+      
+        E. chanaltin.checklist (Checklist) - Nuevo o Integrado con FSM
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#f-chanaltinincident-incidenciaspapeletas-nuevo">
+<span class="md-ellipsis">
+      
+        F. chanaltin.incident (Incidencias/Papeletas) - Nuevo
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#consideraciones-de-logica">
+<span class="md-ellipsis">
+      
+        Consideraciones de Lógica
+      
+    </span>
+</a>
+<nav aria-label="Consideraciones de Lógica" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#validacion-documental">
+<span class="md-ellipsis">
+      
+        Validación Documental
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#regla-de-descanso">
+<span class="md-ellipsis">
+      
+        Regla de Descanso
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bloqueo-por-mantenimiento">
+<span class="md-ellipsis">
+      
+        Bloqueo por Mantenimiento
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#flujo-propio-vs-tercerizado">
+<span class="md-ellipsis">
+      
+        Flujo Propio vs. Tercerizado
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#analitica-y-rentabilidad">
+<span class="md-ellipsis">
+      
+        Analítica y Rentabilidad
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#criterio-de-diseno">
+<span class="md-ellipsis">
+      
+        Criterio de Diseño
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
 <h1 id="1-sistema-avanzado-de-programacion-de-viajes-trip-scheduling">1. Sistema Avanzado de Programación de Viajes (Trip Scheduling)</h1>
 <p>El Sistema Avanzado de Programación de Viajes para Chanaltín centraliza la planificación, validación de seguridad y control de costos. Su objetivo es reemplazar el uso de Excel y procesos manuales por un flujo integrado en Odoo v18.</p>
+<h2 id="gestion-de-flota-y-operaciones-avanzadas">Gestión de Flota y Operaciones Avanzadas</h2>
+<p>El estándar de Odoo v18 proporciona los cimientos de flota, empleados, mantenimiento, ventas, compras, contabilidad y servicios de campo. Sin embargo, la operación de Chanaltín requiere una arquitectura extendida porque el proceso real combina programación de viajes, doble conductor, tracto, carreta, retornos con carga, control documental, checklists, incidencias y rentabilidad por placa.</p>
+<h3 id="modulos-de-odoo-involucrados">Módulos de Odoo Involucrados</h3>
+<ul>
+<li><strong>Flota (<code>fleet</code>):</strong> Gestión de activos como tractos, carretas y montacargas. Aporta <code>fleet.vehicle</code>, placa, odómetro, contratos, servicios y logs de asignación.</li>
+<li><strong>Empleados (<code>hr</code>):</strong> Legajos de conductores, datos privados de empleado, puesto, calendario laboral y estructura organizativa mediante <code>hr.employee</code>.</li>
+<li><strong>Mantenimiento (<code>maintenance</code>):</strong> Órdenes de trabajo, mantenimiento preventivo/correctivo, equipos, estados, prioridades y bloqueos operativos mediante <code>maintenance.request</code>.</li>
+<li><strong>Servicios de Campo (<code>industry_fsm</code>):</strong> Ejecución móvil de tareas, firmas, reportes y checklists sobre <code>project.task</code>.</li>
+<li><strong>Ventas (<code>sale</code>):</strong> Facturación de fletes, servicios de alquiler y vínculo comercial con el cliente.</li>
+<li><strong>Compras (<code>purchase</code>):</strong> Órdenes de servicio o compra para transportistas terceros.</li>
+<li><strong>Contabilidad (<code>account_accountant</code>):</strong> Asientos, líneas contables, conciliación y distribución analítica para medir rentabilidad por placa, ruta o centro de costo.</li>
+</ul>
+<h3 id="enfoque-de-arquitectura">Enfoque de Arquitectura</h3>
+<p>La recomendación es extender modelos estándar cuando ya existe un objeto de negocio sólido, y crear modelos nuevos solo donde Odoo no cubre el dominio logístico de Chanaltín.</p>
+<ul>
+<li>Extender <code>fleet.vehicle</code> para datos técnicos de tractos, carretas, montacargas, documentos y horómetros.</li>
+<li>Extender <code>hr.employee</code> para datos de conductor, licencias, SCTR, descanso y estado operativo.</li>
+<li>Crear <code>chanaltin.trip</code> como objeto central de viaje.</li>
+<li>Crear <code>chanaltin.route</code> para parametrizar origen, destino, distancia, zona y valor referencial MTC.</li>
+<li>Crear <code>chanaltin.checklist</code> o integrar con <code>project.task</code>/FSM cuando el checklist deba ejecutarse en móvil.</li>
+<li>Crear <code>chanaltin.incident</code> para papeletas, SUTRAN, SAT, incidencias disciplinarias y responsabilidad económica.</li>
+</ul>
 <h2 id="gestion-de-insumos-para-la-programacion">Gestión de Insumos para la Programación</h2>
 <p>El proceso inicia cuando se recibe la necesidad de servicio y requiere consolidar los siguientes datos maestros:</p>
 <ul>
@@ -790,60 +857,290 @@
 <li><strong>Cálculo de incentivos:</strong> Pagos variables a conductores basados en viajes y retornos.</li>
 <li><strong>Valor referencial MTC:</strong> Cálculo automatizado para detracciones del 4%.</li>
 </ul>
+<h2 id="propuesta-de-nuevos-modelos-y-campos">Propuesta de Nuevos Modelos y Campos</h2>
+<p>Odoo nativo no tiene un objeto de viaje que gestione simultáneamente dos conductores, una unidad tracto, una carreta, retorno con carga, data operativa y validaciones de seguridad. Por ello, el modelo <code>chanaltin.trip</code> debe ser el corazón operativo del flujo.</p>
+<h3 id="diagrama-de-clases">Diagrama de Clases</h3>
+<div class="mermaid">classDiagram
+    class Trip {
+        +char name
+        +datetime date_start_planned
+        +datetime date_end_planned
+        +datetime date_start_real
+        +datetime date_end_real
+        +selection trip_type
+        +selection state
+        +float planned_load
+        +float actual_load
+        +boolean perfect_delivery
+        +boolean has_return_load
+        +boolean driver_rest_check
+        +boolean document_validity_check
+        +datetime arrival_cd_time
+        +datetime discharge_start_time
+        +datetime discharge_end_time
+    }
 
+    class Route {
+        +char name
+        +float distance_km
+        +float ref_value_mtc
+        +selection zone
+        +selection route_type
+    }
 
+    class FleetVehicle {
+        +char license_plate
+        +char internal_code
+        +boolean is_trailer
+        +char mtc_weight_format
+        +float current_engine_hours
+        +float odometer
+    }
 
+    class Employee {
+        +char name
+        +selection license_type
+        +date license_expiry
+        +date sctr_expiry
+        +selection last_trip_type
+        +datetime last_long_trip_end
+    }
 
+    class Checklist {
+        +selection type
+        +json observations
+        +image evidence_photo
+        +boolean maintenance_required
+        +char signed_by
+    }
 
+    class Incident {
+        +date date_incident
+        +char ticket_number
+        +float amount_fine
+        +selection severity
+        +selection incident_source
+        +boolean is_billable_to_client
+    }
 
+    Trip --&gt; "1" Route : asignada
+    Trip --&gt; "1" FleetVehicle : unidad_tracto
+    Trip --&gt; "0..1" FleetVehicle : carreta
+    Trip --&gt; "1" Employee : conductor_titular
+    Trip --&gt; "0..1" Employee : conductor_asistente
+    Trip --&gt; "0..*" Checklist : inspecciones
+    Trip --&gt; "0..*" Incident : incidencias
+    Employee --&gt; "0..*" Incident : historial_disciplinario
+    FleetVehicle --&gt; "0..*" Incident : historial_unidad
+</div>
+<h3 id="flujo-de-validacion-de-viaje">Flujo de Validación de Viaje</h3>
+<div class="mermaid">flowchart TD
+    A[Solicitud de viaje] --&gt; B[Crear chanaltin.trip]
+    B --&gt; C[Seleccionar ruta]
+    C --&gt; D[Asignar tracto, carreta y conductor]
+    D --&gt; E{Validar documentos}
+    E -- Vencidos --&gt; E1[Bloquear programación]
+    E -- Vigentes --&gt; F{Validar descanso}
+    F -- No cumple --&gt; F1[Bloquear conductor]
+    F -- Cumple --&gt; G{Validar mantenimiento}
+    G -- Critico pendiente --&gt; G1[Bloquear unidad]
+    G -- Disponible --&gt; H{Viaje tercerizado?}
+    H -- Si --&gt; I[Crear orden de compra / servicio]
+    H -- No --&gt; J[Confirmar viaje propio]
+    I --&gt; K[Programado]
+    J --&gt; K[Programado]
+    K --&gt; L[Checklist de salida]
+    L --&gt; M[En ruta]
+    M --&gt; N[Registro de tiempos CD y carga real]
+    N --&gt; O[Checklist de retorno]
+    O --&gt; P[Cierre y KPIs]
+</div>
+<h3 id="integracion-funcional-con-odoo">Integración Funcional con Odoo</h3>
+<div class="mermaid">flowchart LR
+    Trip[chanaltin.trip] --&gt; Fleet[fleet.vehicle]
+    Trip --&gt; Driver[hr.employee]
+    Trip --&gt; Route[chanaltin.route]
+    Trip --&gt; Maintenance[maintenance.request]
+    Trip --&gt; FSM[project.task / industry_fsm]
+    Trip --&gt; Sale[sale.order]
+    Trip --&gt; Purchase[purchase.order]
+    Trip --&gt; Accounting[account.move.line]
 
-
-
-
-
-
-                
-              </article>
-            </div>
-          
-          
+    Fleet --&gt; Odometer[fleet.vehicle.odometer]
+    Fleet --&gt; Contracts[fleet.vehicle.log.contract]
+    Fleet --&gt; Services[fleet.vehicle.log.services]
+    FSM --&gt; Checklist[chanaltin.checklist]
+    Accounting --&gt; Analytic[analytic_distribution por placa]
+</div>
+<h2 id="detalle-de-campos-criticos">Detalle de Campos Críticos</h2>
+<h3 id="a-chanaltintrip-viaje-nuevo">A. <code>chanaltin.trip</code> (Viaje) - Nuevo</h3>
+<p>Este modelo concentra la programación, seguimiento y cierre del viaje.</p>
+<p>Campos principales:</p>
+<ul>
+<li><code>name</code>: folio de viaje.</li>
+<li><code>date_start_planned</code> / <code>date_end_planned</code>: fechas planificadas.</li>
+<li><code>date_start_real</code> / <code>date_end_real</code>: fechas reales.</li>
+<li><code>trip_type</code>: corta o larga.</li>
+<li><code>state</code>: borrador, programado, en ruta, retorno, cerrado o cancelado.</li>
+<li><code>route_id</code>: ruta asignada.</li>
+<li><code>vehicle_id</code>: unidad tracto.</li>
+<li><code>trailer_id</code>: carreta.</li>
+<li><code>driver_id</code>: conductor titular.</li>
+<li><code>assistant_driver_id</code>: conductor asistente.</li>
+<li><code>planned_load</code>: capacidad planificada.</li>
+<li><code>actual_load</code>: carga real.</li>
+<li><code>perfect_delivery</code>: indicador de entrega perfecta.</li>
+<li><code>has_return_load</code>: retorno con carga.</li>
+</ul>
+<p>Campos de validación:</p>
+<ul>
+<li><code>driver_rest_check</code>: valida si el conductor cumplió descanso tras una ruta larga.</li>
+<li><code>document_validity_check</code>: bloquea salida si SOAT, revisión técnica, brevete o SCTR están vencidos.</li>
+<li><code>maintenance_block_check</code>: bloquea si la unidad tiene mantenimiento crítico abierto.</li>
+<li><code>third_party_check</code>: valida proveedor, unidad y conductor externo cuando el viaje es tercerizado.</li>
+</ul>
+<p>Campos de data operativa:</p>
+<ul>
+<li><code>arrival_cd_time</code>: llegada al centro de distribución.</li>
+<li><code>discharge_start_time</code>: inicio de descarga.</li>
+<li><code>discharge_end_time</code>: fin de descarga.</li>
+<li><code>return_start_time</code>: inicio del retorno.</li>
+<li><code>return_end_time</code>: fin del retorno.</li>
+<li><code>dead_time_hours</code>: tiempo muerto calculado.</li>
+</ul>
+<h3 id="b-chanaltinroute-ruta-nuevo">B. <code>chanaltin.route</code> (Ruta) - Nuevo</h3>
+<p>Campos principales:</p>
+<ul>
+<li><code>name</code>: origen - destino.</li>
+<li><code>origin_id</code> / <code>destination_id</code>: puntos operativos.</li>
+<li><code>distance_km</code>: distancia estimada.</li>
+<li><code>ref_value_mtc</code>: valor referencial MTC.</li>
+<li><code>zone</code>: norte, sur, centro u otra clasificación operativa.</li>
+<li><code>route_type</code>: corta o larga.</li>
+<li><code>default_viatic_amount</code>: viático sugerido.</li>
+<li><code>expected_transit_hours</code>: horas esperadas de tránsito.</li>
+</ul>
+<h3 id="c-extensiones-a-fleetvehicle">C. Extensiones a <code>fleet.vehicle</code></h3>
+<p>Odoo ya aporta placa, odómetro, conductor actual, contratos y servicios. Chanaltín debe extenderlo con campos operativos para transporte pesado:</p>
+<ul>
+<li><code>internal_code</code>: código interno de Chanaltín.</li>
+<li><code>is_trailer</code>: diferencia tractos de carretas.</li>
+<li><code>vehicle_operation_type</code>: tracto, carreta, montacargas u otro activo operativo.</li>
+<li><code>mtc_weight_format</code>: formato de pesos y medidas.</li>
+<li><code>current_engine_hours</code>: horómetro actualizado por GPS, clave para montacargas.</li>
+<li><code>soat_expiry</code>: vencimiento SOAT.</li>
+<li><code>technical_review_expiry</code>: vencimiento de revisión técnica.</li>
+<li><code>operational_status</code>: disponible, programado, en ruta, mantenimiento, bloqueado.</li>
+<li><code>analytic_account_id</code>: cuenta analítica por placa o centro de costo.</li>
+</ul>
+<p>Consideración: para kilometraje debe reutilizarse <code>fleet.vehicle.odometer</code>. Para costos de servicios existentes debe evaluarse <code>fleet.vehicle.log.services</code> antes de crear modelos paralelos.</p>
+<h3 id="d-extensiones-a-hremployee">D. Extensiones a <code>hr.employee</code></h3>
+<p>El conductor debe ser empleado cuando pertenece a Chanaltín. Para terceros, se puede evaluar <code>res.partner</code> o una extensión de homologación vinculada al proveedor.</p>
+<p>Campos propuestos:</p>
+<ul>
+<li><code>is_driver</code>: identifica empleados conductores.</li>
+<li><code>license_type</code>: categoría de brevete.</li>
+<li><code>license_expiry</code>: vencimiento de licencia.</li>
+<li><code>sctr_expiry</code>: vencimiento de seguro complementario.</li>
+<li><code>last_trip_type</code>: último viaje corto o largo.</li>
+<li><code>last_long_trip_end</code>: fecha/hora de cierre del último viaje largo.</li>
+<li><code>driver_status</code>: disponible, descansando, bloqueado, de vacaciones, suspendido.</li>
+<li><code>incident_count</code>: contador de incidencias abiertas o relevantes.</li>
+</ul>
+<h3 id="e-chanaltinchecklist-checklist-nuevo-o-integrado-con-fsm">E. <code>chanaltin.checklist</code> (Checklist) - Nuevo o Integrado con FSM</h3>
+<p>Para checklist simple se puede crear modelo propio. Si requiere ejecución móvil, firma, evidencia y reporte al cliente, conviene integrarlo con <code>project.task</code> de <code>industry_fsm</code>.</p>
+<p>Campos:</p>
+<ul>
+<li><code>trip_id</code>: viaje asociado.</li>
+<li><code>vehicle_id</code>: unidad inspeccionada.</li>
+<li><code>driver_id</code>: responsable de la inspección.</li>
+<li><code>type</code>: salida, retorno, entrega, recepción o auxilio.</li>
+<li><code>observations</code>: JSON con luces, llantas, frenos, documentos, carrocería, EPP y otros controles.</li>
+<li><code>evidence_photo</code>: evidencia fotográfica.</li>
+<li><code>maintenance_required</code>: dispara solicitud a mantenimiento.</li>
+<li><code>maintenance_request_id</code>: vínculo a <code>maintenance.request</code>.</li>
+<li><code>fsm_task_id</code>: vínculo a <code>project.task</code> si se usa Field Service.</li>
+</ul>
+<h3 id="f-chanaltinincident-incidenciaspapeletas-nuevo">F. <code>chanaltin.incident</code> (Incidencias/Papeletas) - Nuevo</h3>
+<p>Modelo para digitalizar papeletas, incidencias operativas, sanciones y responsabilidades económicas.</p>
+<p>Campos:</p>
+<ul>
+<li><code>vehicle_id</code>: placa involucrada.</li>
+<li><code>driver_id</code>: conductor responsable.</li>
+<li><code>trip_id</code>: viaje relacionado.</li>
+<li><code>date_incident</code>: fecha de incidencia.</li>
+<li><code>ticket_number</code>: papeleta o número de expediente.</li>
+<li><code>amount_fine</code>: importe de multa.</li>
+<li><code>severity</code>: baja, media, alta o crítica.</li>
+<li><code>incident_source</code>: SUTRAN, SAT, municipal, cliente, taller u operación interna.</li>
+<li><code>is_billable_to_client</code>: indica si debe reembolsarse por cliente.</li>
+<li><code>state</code>: borrador, en revisión, apelado, confirmado, cerrado.</li>
+</ul>
+<h2 id="consideraciones-de-logica">Consideraciones de Lógica</h2>
+<h3 id="validacion-documental">Validación Documental</h3>
+<p>Antes de pasar un viaje a <code>programado</code>, el sistema debe validar documentos del conductor y de la unidad:</p>
+<ul>
+<li>Brevete y SCTR desde <code>hr.employee</code>.</li>
+<li>SOAT, revisión técnica, formato MTC y documentos del activo desde <code>fleet.vehicle</code>.</li>
+<li>Para terceros, documentos del proveedor, conductor externo y unidad homologada.</li>
+</ul>
+<p>Si un documento está vencido, el viaje debe quedar bloqueado con actividad automática para el responsable.</p>
+<h3 id="regla-de-descanso">Regla de Descanso</h3>
+<p>La regla mínima propuesta:</p>
+<ul>
+<li>Si <code>last_trip_type = larga</code>, el conductor no puede tomar otro viaje largo hasta cumplir la ventana de descanso definida por operación.</li>
+<li>La regla debe considerar conductor titular y asistente.</li>
+<li>Al cerrar un viaje largo, actualizar <code>last_trip_type</code> y <code>last_long_trip_end</code> en <code>hr.employee</code>.</li>
+</ul>
+<h3 id="bloqueo-por-mantenimiento">Bloqueo por Mantenimiento</h3>
+<p>El viaje debe consultar mantenimiento antes de confirmar:</p>
+<ul>
+<li>Si existe <code>maintenance.request</code> crítica abierta para la unidad, bloquear programación.</li>
+<li>Si el checklist marca <code>maintenance_required</code>, crear o vincular una solicitud de mantenimiento.</li>
+<li>Para montacargas, usar <code>current_engine_hours</code> y reglas por horas, por ejemplo mantenimiento cada 250h.</li>
+<li>Para tractos, usar odómetro de <code>fleet.vehicle.odometer</code> y alertas por km.</li>
+</ul>
+<h3 id="flujo-propio-vs-tercerizado">Flujo Propio vs. Tercerizado</h3>
+<ul>
+<li>Viaje propio: asigna unidad, carreta y conductores internos; genera costos internos y analítica por placa.</li>
+<li>Viaje tercerizado: genera o vincula <code>purchase.order</code> para el proveedor transportista y conserva margen contra la venta.</li>
+<li>En ambos casos, el viaje debe permitir medir rentabilidad por ruta, placa, cliente y tipo de operación.</li>
+</ul>
+<h3 id="analitica-y-rentabilidad">Analítica y Rentabilidad</h3>
+<p>La rentabilidad debe apoyarse en distribución analítica:</p>
+<ul>
+<li>Ingresos desde <code>sale.order</code> y factura de cliente.</li>
+<li>Costos de terceros desde <code>purchase.order</code> y factura de proveedor.</li>
+<li>Costos internos desde combustible, mantenimiento, viáticos y servicios.</li>
+<li>Distribución por placa, ruta o centro de costo usando <code>analytic_distribution</code> en líneas contables cuando aplique.</li>
+</ul>
+<h2 id="criterio-de-diseno">Criterio de Diseño</h2>
+<p>El sistema debe consultar automáticamente el estado del conductor en <code>hr.employee</code> y de la unidad en <code>fleet.vehicle</code> al programar un viaje. La meta es garantizar que la operación sea segura, documentada, rentable y trazable antes de que el camión salga a ruta.</p>
+</article>
+</div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
-        </div>
-        
-      </main>
-      
-        <footer class="md-footer">
-  
-  <div class="md-footer-meta md-typeset">
-    <div class="md-footer-meta__inner md-grid">
-      <div class="md-copyright">
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
   
   
     Made with
-    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
       Material for MkDocs
     </a>
-  
 </div>
-      
-    </div>
-  </div>
+</div>
+</div>
 </footer>
-      
-    </div>
-    <div class="md-dialog" data-md-component="dialog">
-      <div class="md-dialog__inner md-typeset"></div>
-    </div>
-    
-    
-    
-      
-      
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
-    
-    
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
-      
-    
-  </body>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+<script type="module">import mermaid from "https://unpkg.com/mermaid@10.4.0/dist/mermaid.esm.min.mjs";
+mermaid.initialize({});</script></body>
 </html>
