@@ -1,5 +1,6 @@
 site_name: Chanaltín Docs
 site_description: Documentación de requerimientos de Chanaltín
+site_url: https://hfoc11.github.io/
 docs_dir: docs
 site_dir: site
 

@@ -2,7 +2,7 @@
 
 Documentación publicada en GitHub Pages:
 
-https://hfoc11.github.io/chanaltin-docs/
+https://hfoc11.github.io/
 
 Este repositorio contiene el contenido fuente del sitio MkDocs. Los cambios en `main` se publican automáticamente mediante GitHub Actions.
 
