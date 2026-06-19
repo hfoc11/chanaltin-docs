@@ -31,6 +31,28 @@ El sitio se publica desde el repositorio especial `hfoc11.github.io`, no desde l
 - `docs/diagrams/architecture.md`: diagramas.
 - `requirements.txt`: dependencias para construir el sitio.
 
+## Modulos Odoo involucrados
+
+Para futuras IAs: el desarrollo funcional documentado esta relacionado con Odoo 18.0 y debe tomar como referencia estos modulos nativos y enterprise instalados localmente.
+
+### Rutas base
+
+- `D:\ODOO\odoo-18.0\addons`
+- `D:\ODOO\odoo-18.0\enterprise\enterprise\addons`
+
+### Modulos especificos
+
+- `D:\ODOO\odoo-18.0\addons\fleet` - flota, vehiculos, unidades y datos relacionados con placas.
+- `D:\ODOO\odoo-18.0\addons\hr` - empleados, conductores y datos del personal.
+- `D:\ODOO\odoo-18.0\addons\maintenance` - mantenimiento preventivo/correctivo y bloqueos operativos.
+- `D:\ODOO\odoo-18.0\enterprise\enterprise\addons\industry_fsm` - servicio externo / Field Service.
+- `D:\ODOO\odoo-18.0\enterprise\enterprise\addons\industry_fsm_repair` - reparaciones vinculadas a servicio externo.
+- `D:\ODOO\odoo-18.0\addons\sale` - ventas, ordenes de cliente y flujo comercial.
+- `D:\ODOO\odoo-18.0\addons\purchase` - compras, ordenes de servicio/proveedor y costos de terceros.
+- `D:\ODOO\odoo-18.0\enterprise\enterprise\addons\account_accountant` - contabilidad avanzada.
+
+Estos modulos deben revisarse antes de proponer modelos nuevos, porque muchos objetos de negocio ya existen en Odoo y conviene extenderlos en lugar de duplicarlos.
+
 ## Comandos seguros para validar
 
 Desde la raiz del repo `chanaltin-docs`:
@@ -82,4 +104,3 @@ spec=200
 css=200
 title=Chanaltin Docs
 ```
-
