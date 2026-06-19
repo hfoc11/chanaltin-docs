@@ -1,0 +1,1484 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentación de requerimientos de Chanaltín">
+      
+      
+      
+      
+        <link rel="prev" href="../..">
+      
+      
+        <link rel="next" href="../../diagrams/architecture/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Chanaltin - Chanaltín Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1-sistema-avanzado-de-programacion-de-viajes-trip-scheduling" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Chanaltín Docs" class="md-header__button md-logo" aria-label="Chanaltín Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Chanaltín Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Chanaltin
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Chanaltín Docs" class="md-nav__button md-logo" aria-label="Chanaltín Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Chanaltín Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Especificaciones
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Especificaciones
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chanaltin
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chanaltin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-gestion-de-insumos-para-la-programacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Gestión de Insumos para la Programación
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-motor-de-validaciones-criticas-logica-avanzada" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Motor de Validaciones Críticas (Lógica avanzada)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-ejecucion-y-seguimiento-de-viaje" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Ejecución y seguimiento de viaje
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-cierre-operativo-y-data-sucia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Cierre operativo y "data sucia"
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-integracion-con-planilla-y-contabilidad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Integración con planilla y contabilidad
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fase-15-inventario-y-surtidor-control-de-insumos-criticos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fase 1.5 — Inventario y Surtidor (Control de insumos críticos)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fase 1.5 — Inventario y Surtidor (Control de insumos críticos)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-configuracion-de-sedes-y-almacenes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Configuración de sedes y almacenes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-gestion-del-surtidor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Gestión del surtidor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-desglose-de-kits-de-repuestos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Desglose de kits de repuestos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-flujo-virtual-de-solicitud-y-aprobacion-arequipa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Flujo virtual de solicitud y aprobación (Arequipa)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-control-financiero-de-inventarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Control financiero de inventarios
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-vinculacion-con-centros-de-costo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Vinculación con centros de costo
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-motor-de-integracion-con-gps-prodcom-frotcom" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Motor de integración con GPS (PRODCOM / FROTCOM)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Motor de integración con GPS (PRODCOM / FROTCOM)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#funcionalidades-clave" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Funcionalidades clave
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-digitalizacion-de-la-data-sucia-y-dashboard-de-kpis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Digitalización de la "data sucia" y dashboard de KPIs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Digitalización de la &#34;data sucia&#34; y dashboard de KPIs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#datos-a-digitalizar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Datos a digitalizar
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kpis-sugeridos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        KPIs sugeridos
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-control-de-conductores-y-seguridad-vial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Control de conductores y seguridad vial
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Control de conductores y seguridad vial">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gestion-documental-y-alertas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gestión documental y alertas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logica-de-descansos-y-registro-de-horas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lógica de descansos y registro de horas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#record-e-incidencias" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Récord e incidencias
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conductores-terceros" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conductores terceros
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deslinde-de-responsabilidades" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deslinde de responsabilidades
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-flujo-de-checklists-operativos-integrados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Flujo de checklists operativos integrados
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Flujo de checklists operativos integrados">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tipos-de-checklists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tipos de checklists
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#funcionalidad-movil-y-multimedia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Funcionalidad móvil y multimedia
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integracion-con-mantenimiento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integración con mantenimiento
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kpis-derivados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        KPIs derivados
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-gestion-de-terceros-subarriendo-de-fletes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Gestión de terceros (subarriendo de fletes)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Gestión de terceros (subarriendo de fletes)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#modelo-operativo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modelo operativo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#registro-y-homologacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Registro y homologación
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#control-de-margenes-y-flujo-documental" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Control de márgenes y flujo documental
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#seguridad-y-contratos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Seguridad y contratos
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conclusión
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../diagrams/architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Diagramas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../adr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ADRs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-gestion-de-insumos-para-la-programacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Gestión de Insumos para la Programación
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-motor-de-validaciones-criticas-logica-avanzada" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Motor de Validaciones Críticas (Lógica avanzada)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-ejecucion-y-seguimiento-de-viaje" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Ejecución y seguimiento de viaje
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-cierre-operativo-y-data-sucia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Cierre operativo y "data sucia"
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-integracion-con-planilla-y-contabilidad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Integración con planilla y contabilidad
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fase-15-inventario-y-surtidor-control-de-insumos-criticos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fase 1.5 — Inventario y Surtidor (Control de insumos críticos)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fase 1.5 — Inventario y Surtidor (Control de insumos críticos)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-configuracion-de-sedes-y-almacenes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Configuración de sedes y almacenes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-gestion-del-surtidor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Gestión del surtidor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-desglose-de-kits-de-repuestos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Desglose de kits de repuestos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-flujo-virtual-de-solicitud-y-aprobacion-arequipa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Flujo virtual de solicitud y aprobación (Arequipa)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-control-financiero-de-inventarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Control financiero de inventarios
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-vinculacion-con-centros-de-costo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Vinculación con centros de costo
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-motor-de-integracion-con-gps-prodcom-frotcom" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Motor de integración con GPS (PRODCOM / FROTCOM)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Motor de integración con GPS (PRODCOM / FROTCOM)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#funcionalidades-clave" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Funcionalidades clave
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-digitalizacion-de-la-data-sucia-y-dashboard-de-kpis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Digitalización de la "data sucia" y dashboard de KPIs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Digitalización de la &#34;data sucia&#34; y dashboard de KPIs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#datos-a-digitalizar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Datos a digitalizar
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kpis-sugeridos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        KPIs sugeridos
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-control-de-conductores-y-seguridad-vial" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Control de conductores y seguridad vial
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Control de conductores y seguridad vial">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gestion-documental-y-alertas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gestión documental y alertas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logica-de-descansos-y-registro-de-horas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lógica de descansos y registro de horas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#record-e-incidencias" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Récord e incidencias
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conductores-terceros" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conductores terceros
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deslinde-de-responsabilidades" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deslinde de responsabilidades
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-flujo-de-checklists-operativos-integrados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Flujo de checklists operativos integrados
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Flujo de checklists operativos integrados">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tipos-de-checklists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tipos de checklists
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#funcionalidad-movil-y-multimedia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Funcionalidad móvil y multimedia
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integracion-con-mantenimiento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integración con mantenimiento
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kpis-derivados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        KPIs derivados
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-gestion-de-terceros-subarriendo-de-fletes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Gestión de terceros (subarriendo de fletes)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Gestión de terceros (subarriendo de fletes)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#modelo-operativo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modelo operativo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#registro-y-homologacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Registro y homologación
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#control-de-margenes-y-flujo-documental" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Control de márgenes y flujo documental
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#seguridad-y-contratos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Seguridad y contratos
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conclusión
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="1-sistema-avanzado-de-programacion-de-viajes-trip-scheduling">1. Sistema Avanzado de Programación de Viajes (Trip Scheduling)</h1>
+<p>El Sistema Avanzado de Programación de Viajes para Chanaltín centraliza la planificación, validación de seguridad y control de costos. Su objetivo es reemplazar el uso de Excel y procesos manuales por un flujo integrado en Odoo v18.</p>
+<h2 id="1-gestion-de-insumos-para-la-programacion">1. Gestión de Insumos para la Programación</h2>
+<p>El proceso inicia cuando se recibe la necesidad de servicio y requiere consolidar los siguientes datos maestros:</p>
+<ul>
+<li><strong>Asignación multivariable:</strong> Unidad (tracto), Carreta, Conductor titular y, en rutas largas, Conductor asistente.</li>
+<li><strong>Definición de rutas:</strong> Clasificación entre <em>Rutas Cortas</em> y <em>Rutas Largas</em> para aplicar reglas de descanso y viáticos.</li>
+<li><strong>Tercerización:</strong> Posibilidad de asignar viajes a proveedores terceros, generando una Orden de Servicio vinculada para controlar el costo.</li>
+</ul>
+<h2 id="2-motor-de-validaciones-criticas-logica-avanzada">2. Motor de Validaciones Críticas (Lógica avanzada)</h2>
+<p>Validaciones automáticas antes de confirmar una programación:</p>
+<ul>
+<li><strong>Control de descansos:</strong> Si un conductor realiza una ruta larga, no debe programarse inmediatamente otra ruta larga.</li>
+<li><strong>Disponibilidad documental:</strong> Bloqueo si la unidad o el conductor tienen documentos vencidos (SOAT, revisión técnica, brevete, SCTR, etc.).</li>
+<li><strong>Estado de mantenimiento:</strong> Sincronización con el módulo de taller para impedir despachos si hay mantenimiento crítico pendiente.</li>
+</ul>
+<h2 id="3-ejecucion-y-seguimiento-de-viaje">3. Ejecución y seguimiento de viaje</h2>
+<p>Durante y después del viaje se registran y gestionan:</p>
+<ul>
+<li><strong>Documentación de salida:</strong> Generación o vinculación de Guía de Remisión Transportista electrónica.</li>
+<li><strong>Carga operativa:</strong> Registro de capacidad vs. carga real.</li>
+<li><strong>Integración de viáticos:</strong> Conexión con el módulo de Gastos para liquidar montos por placa y ruta.</li>
+</ul>
+<h2 id="4-cierre-operativo-y-data-sucia">4. Cierre operativo y "data sucia"</h2>
+<p>Al retorno, el planificador cierra el viaje y alimenta el repositorio operacional ("data sucia") para KPIs:</p>
+<ul>
+<li><strong>KPI Entrega Perfecta:</strong> Incidencias (faltantes, daños, demoras).</li>
+<li><strong>Tiempos de atención:</strong> Horas de llegada, inicio de descarga y salida en CDs.</li>
+<li><strong>Gestión de retornos:</strong> Indicador de retorno con/sin carga que impacta rentabilidad por placa.</li>
+</ul>
+<h2 id="5-integracion-con-planilla-y-contabilidad">5. Integración con planilla y contabilidad</h2>
+<p>Automatizaciones administrativas relacionadas con la programación:</p>
+<ul>
+<li><strong>Cálculo de incentivos:</strong> Pagos variables a conductores basados en viajes y retornos.</li>
+<li><strong>Valor referencial MTC:</strong> Cálculo automatizado para detracciones (4%).</li>
+</ul>
+<hr />
+<h2 id="fase-15-inventario-y-surtidor-control-de-insumos-criticos">Fase 1.5 — Inventario y Surtidor (Control de insumos críticos)</h2>
+<p>Objetivo: trazabilidad total de combustible y repuestos por unidad.</p>
+<h3 id="1-configuracion-de-sedes-y-almacenes">1. Configuración de sedes y almacenes</h3>
+<ul>
+<li>Almacenes físicos (ej. Huara 80%, Arequipa 20%).</li>
+<li>Ubicaciones internas por repuestos, neumáticos, lubricantes y tanque de combustible.</li>
+</ul>
+<h3 id="2-gestion-del-surtidor">2. Gestión del surtidor</h3>
+<ul>
+<li>Productos con UoM estrictas: petróleo (galones), urea (litros).</li>
+<li>Registro de ingresos masivos (tanques) y despacho rápido ligado a placa y kilometraje.</li>
+</ul>
+<h3 id="3-desglose-de-kits-de-repuestos">3. Desglose de kits de repuestos</h3>
+<ul>
+<li>Recepción automática que desglosa kits en componentes individuales para control de saldos.</li>
+</ul>
+<h3 id="4-flujo-virtual-de-solicitud-y-aprobacion-arequipa">4. Flujo virtual de solicitud y aprobación (Arequipa)</h3>
+<ul>
+<li>Solicitud virtual en Odoo, validación por responsable en Huara antes del consumo.</li>
+</ul>
+<h3 id="5-control-financiero-de-inventarios">5. Control financiero de inventarios</h3>
+<ul>
+<li>Método AVCO (costo promedio ponderado) y bloqueo de stock negativo.</li>
+</ul>
+<h3 id="6-vinculacion-con-centros-de-costo">6. Vinculación con centros de costo</h3>
+<ul>
+<li>Cada salida genera un asiento contable afectando la cuenta analítica de la placa o centro de costo.</li>
+</ul>
+<hr />
+<h2 id="2-motor-de-integracion-con-gps-prodcom-frotcom">2. Motor de integración con GPS (PRODCOM / FROTCOM)</h2>
+<p>Objetivo: automatizar la captura de datos operativos desde GPS.</p>
+<h3 id="funcionalidades-clave">Funcionalidades clave</h3>
+<ul>
+<li><strong>Kilometraje y horómetro:</strong> importación automática de odómetros y horas motor; disparadores de mantenimiento.</li>
+<li><strong>Telemetría de combustible:</strong> comparación galones abastecidos vs. consumo registrado; KPI de rendimiento.</li>
+<li><strong>Control de tiempos en CDs:</strong> registro automático de llegada, inicio de descarga y salida.</li>
+<li><strong>Alimentación de la "data sucia":</strong> trazabilidad de ruta y ubicación en tiempo real.</li>
+</ul>
+<p>Estrategia: esta integración se plantea como fase posterior (Fase 4) tras estabilizar procesos base en Odoo.</p>
+<hr />
+<h2 id="3-digitalizacion-de-la-data-sucia-y-dashboard-de-kpis">3. Digitalización de la "data sucia" y dashboard de KPIs</h2>
+<p>Objetivo: convertir el repositorio Excel en un flujo automatizado que alimente tableros en Odoo.</p>
+<h3 id="datos-a-digitalizar">Datos a digitalizar</h3>
+<ul>
+<li>Métricas de carga (capacidad vs. carga real).</li>
+<li>Tiempos reales (salida, llegada, inicio y fin de descarga, retorno).</li>
+<li>Calidad del servicio (campo Entrega Perfecta y motivos de incumplimiento).</li>
+<li>Logística de retornos y estado de operatividad por unidad.</li>
+</ul>
+<h3 id="kpis-sugeridos">KPIs sugeridos</h3>
+<ul>
+<li>Rentabilidad por placa.</li>
+<li>Rendimiento de combustible.</li>
+<li>Eficiencia por ruta.</li>
+<li>Productividad de conductores.</li>
+<li>Disponibilidad de flota.</li>
+</ul>
+<hr />
+<h2 id="4-control-de-conductores-y-seguridad-vial">4. Control de conductores y seguridad vial</h2>
+<h3 id="gestion-documental-y-alertas">Gestión documental y alertas</h3>
+<ul>
+<li>Maestro de conductores con SCTR, tipo de brevete y fechas de vencimiento.</li>
+<li>Notificaciones y bloqueos automáticos ante vencimientos.</li>
+</ul>
+<h3 id="logica-de-descansos-y-registro-de-horas">Lógica de descansos y registro de horas</h3>
+<ul>
+<li>Implementar regla para rutas largas y trazabilidad de horas de conducción.</li>
+</ul>
+<h3 id="record-e-incidencias">Récord e incidencias</h3>
+<ul>
+<li>Historial disciplinario digital, papeletas, memorándums e infracciones.</li>
+</ul>
+<h3 id="conductores-terceros">Conductores terceros</h3>
+<ul>
+<li>Homologación, controles documentales y lista negra operativa.</li>
+</ul>
+<h3 id="deslinde-de-responsabilidades">Deslinde de responsabilidades</h3>
+<ul>
+<li>Checklists de entrega/recepción con evidencias fotográficas.</li>
+</ul>
+<hr />
+<h2 id="5-flujo-de-checklists-operativos-integrados">5. Flujo de checklists operativos integrados</h2>
+<h3 id="tipos-de-checklists">Tipos de checklists</h3>
+<ul>
+<li>Checklist operativo (salida y retorno).</li>
+<li>Checklist de entrega y recepción entre conductores.</li>
+</ul>
+<h3 id="funcionalidad-movil-y-multimedia">Funcionalidad móvil y multimedia</h3>
+<ul>
+<li>Formularios móviles, evidencias fotográficas y firmas digitales.</li>
+</ul>
+<h3 id="integracion-con-mantenimiento">Integración con mantenimiento</h3>
+<ul>
+<li>Disparador de solicitudes y bloqueo preventivo si hay observaciones críticas.</li>
+</ul>
+<h3 id="kpis-derivados">KPIs derivados</h3>
+<ul>
+<li>Tiempo de respuesta del taller y reincidencia de observaciones.</li>
+</ul>
+<hr />
+<h2 id="6-gestion-de-terceros-subarriendo-de-fletes">6. Gestión de terceros (subarriendo de fletes)</h2>
+<h3 id="modelo-operativo">Modelo operativo</h3>
+<ul>
+<li>Gestión simultánea de la venta al cliente y compra del servicio al tercero.</li>
+<li>Volumen estimado: ~15 unidades tercerizadas por día.</li>
+</ul>
+<h3 id="registro-y-homologacion">Registro y homologación</h3>
+<ul>
+<li>Maestros de proveedores, conductores y unidades; control documental preventivo.</li>
+</ul>
+<h3 id="control-de-margenes-y-flujo-documental">Control de márgenes y flujo documental</h3>
+<ul>
+<li>Validación de margen en tiempo real al generar la OS.</li>
+<li>Emisión de guías y cálculo automático de detracciones (4%).</li>
+</ul>
+<h3 id="seguridad-y-contratos">Seguridad y contratos</h3>
+<ul>
+<li>Bloqueos por documentos vencidos o incidencias; diseño preparado para evolución a contratos marco.</li>
+</ul>
+<hr />
+<h2 id="conclusion">Conclusión</h2>
+<p>La implementación propuesta transforma el rol del planificador de flota de digitador a gestor, apoyado en alertas, validaciones y KPIs en tiempo real. El camino recomendado es comenzar por estabilizar el proceso operativo base en Odoo y luego iterar fases (inventario, GPS, KPIs, terceros).</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
