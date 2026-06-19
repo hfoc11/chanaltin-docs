@@ -6,7 +6,14 @@ site_dir: site
 nav:
   - Home: index.md
   - Especificaciones:
-      - Chanaltin: specs/chanaltin.md
+      - Índice: specs/index.md
+      - "1. Programación de Viajes": specs/trip-scheduling.md
+      - "1.5 Inventario y Surtidor": specs/inventory-fuel.md
+      - "2. Integración GPS": specs/gps-integration.md
+      - "3. Data Sucia y KPIs": specs/dirty-data-kpis.md
+      - "4. Conductores y Seguridad": specs/drivers-safety.md
+      - "5. Checklists Operativos": specs/operational-checklists.md
+      - "6. Gestión de Terceros": specs/third-party-freight.md
   - Diagramas: diagrams/architecture.md
   - ADRs: adr/README.md
 
