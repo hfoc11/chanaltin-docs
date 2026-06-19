@@ -512,6 +512,90 @@ La contabilidad analítica debe ser obligatoria en cuentas de gasto relevantes p
 
 ## Consideraciones de Lógica
 
+## Reglas de Negocio Obligatorias
+
+Estas reglas deben implementarse como validaciones sistémicas duras. El objetivo es impedir que el planificador confirme viajes que expongan a Chanaltín a fatiga de conductores, multas, unidades no aptas, pérdidas de margen o data operativa incompleta.
+
+### BR-001. Asignación dual obligatoria en rutas largas
+
+- Si `trip_classification = larga`, el campo `assistant_driver_id` debe ser obligatorio.
+- El conductor titular y el conductor asistente deben ser personas distintas.
+- Ambos conductores deben pasar las mismas validaciones de disponibilidad, descanso, documentos e incidencias.
+- Si falta copiloto o uno de los dos conductores no está disponible, el viaje no puede pasar a `programado`.
+
+### BR-002. Control de fatiga y regla de oro
+
+- Si un conductor cerró una ruta larga, el sistema debe bloquear su asignación inmediata a otra ruta larga.
+- Durante el bloqueo, el conductor puede quedar en estado `en descanso` o ser sugerido solo para rutas cortas, según política operativa.
+- La regla aplica tanto al conductor titular como al asistente.
+- El sistema debe registrar horas efectivas de conducción y compararlas contra la política interna o normativa aplicable.
+- Cualquier excepción debe exigir motivo, usuario autorizador, fecha/hora y trazabilidad en el chatter del viaje.
+
+### BR-003. Bloqueo documental crítico
+
+- La validación documental no debe ser solo una alerta visual.
+- El viaje debe bloquearse si están vencidos o ausentes documentos obligatorios del conductor: brevete, SCTR u otros definidos por operación.
+- El viaje debe bloquearse si están vencidos o ausentes documentos obligatorios de la unidad: SOAT, revisión técnica y Formato de Pesos y Medidas.
+- El Formato de Pesos y Medidas debe tratarse como documento crítico porque su ausencia genera multas relevantes para la empresa.
+- El bloqueo debe indicar exactamente qué documento impide el despacho.
+
+### BR-004. Interconexión con taller y mantenimiento
+
+- El viaje no debe confirmarse si la unidad tiene una solicitud de mantenimiento crítica abierta.
+- El viaje no debe confirmarse si existe mantenimiento preventivo vencido por kilometraje u horómetro.
+- Para montacargas, la regla base debe considerar mantenimientos por horas, por ejemplo cada 250 horas.
+- Para tractos y carretas, la regla debe apoyarse en odómetro, estado operativo y solicitudes abiertas.
+- Una observación crítica del checklist de retorno debe bloquear automáticamente la unidad para la siguiente programación y crear o vincular una solicitud de mantenimiento.
+
+### BR-005. Captura obligatoria de Data Sucia para cierre
+
+- Para cerrar un viaje, el sistema debe exigir los campos mínimos de operación real.
+- Deben registrarse llegada al CD, inicio de descarga, fin de descarga y salida del CD para medir tiempos muertos atribuibles al cliente.
+- Debe registrarse carga real transportada, kilómetros recorridos, galones abastecidos y rendimiento de combustible.
+- Debe registrarse estado de retorno: vacío, carga propia o carga de terceros.
+- Si falta data crítica, el viaje puede quedar en estado `pendiente de cierre`, pero no debe alimentar KPIs definitivos ni liquidaciones.
+
+### BR-006. Entrega Perfecta e incidencias
+
+- Todo viaje cerrado debe tener indicador `perfect_delivery`.
+- Si `perfect_delivery = false`, debe existir al menos un motivo de incidencia.
+- Motivos mínimos: faltante de productos, carga dañada, carga torcida, problemas de descarga, demora en recepción, estibadores adicionales, cobros adicionales u observación del almacenero.
+- Cada incidencia debe poder registrar responsable, fecha de notificación, impacto económico, observación y evidencia documental.
+- Esta información alimenta la Data Sucia y los dashboards de calidad de servicio.
+
+### BR-007. Valor Referencial MTC y detracción
+
+- Al seleccionar ruta y peso transportado, el sistema debe calcular el valor referencial MTC con tramos, provincias y tablas vigentes.
+- El sistema debe comparar el flete pactado contra el valor referencial calculado.
+- La base de detracción debe ser el mayor importe entre ambos.
+- La detracción debe calcularse al 4%.
+- El valor referencial debe quedar disponible para factura electrónica, guía o reportes tributarios.
+- Si no existe tabla MTC vigente para la ruta, el sistema debe bloquear la facturación o marcar el viaje como pendiente de revisión tributaria.
+
+### BR-008. Viáticos por ruta
+
+- La ruta debe sugerir automáticamente el viático estándar al crear el viaje.
+- Monto base sugerido: S/ 40.00 para rutas cortas o estándar.
+- Monto ampliado sugerido: S/ 55.00 para rutas largas o retornos posteriores que incluyen cena.
+- El viaje debe conservar trazabilidad Ruta -> Viaje -> Anticipo -> Gasto.
+- Si hay cambio de conductor, unidad o ruta, el sistema debe permitir regularización para que el viático quede asociado al ejecutor real.
+
+### BR-009. Incentivos de planilla
+
+- El cierre del viaje debe alimentar el motor de incentivos.
+- Incentivo por viaje cerrado: S/ 36.66.
+- Incentivo por retorno cerrado exitosamente con carga: S/ 50.00.
+- Los incentivos deben considerar conductor titular y reglas definidas para conductor asistente si operación las habilita.
+- Los viajes pendientes de cierre o con data crítica incompleta no deben liquidar incentivo automáticamente.
+
+### BR-010. Tercerización y control de margen
+
+- Si el viaje es tercerizado, el sistema debe generar o vincular automáticamente una Orden de Servicio u Orden de Compra al transportista tercero.
+- La compra del servicio debe quedar vinculada al flete vendido al cliente.
+- El viaje debe mostrar margen esperado en tiempo real: tarifa de venta menos costo negociado con el tercero y costos adicionales.
+- Si el margen cae por debajo del umbral definido por gerencia, el sistema debe solicitar aprobación antes de confirmar.
+- El tercero, su conductor y su unidad deben pasar control documental y homologación antes de ser asignados.
+
 ### Validación Documental
 
 Antes de pasar un viaje a `programado`, el sistema debe validar documentos del conductor y de la unidad:
