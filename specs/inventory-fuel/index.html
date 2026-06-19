@@ -1,210 +1,108 @@
 
-<!doctype html>
-<html lang="en" class="no-js">
-  <head>
-    
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-        <meta name="description" content="Documentación de requerimientos de Chanaltín">
-      
-      
-      
-        <link rel="canonical" href="https://hfoc11.github.io/specs/inventory-fuel/">
-      
-      
-        <link rel="prev" href="../trip-scheduling/">
-      
-      
-        <link rel="next" href="../gps-integration/">
-      
-      
-        
-      
-      
-      <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
-    
-    
-      
-        <title>1.5 Inventario y Surtidor - Chanaltín Docs</title>
-      
-    
-    
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
-      
-      
+<!DOCTYPE html>
 
-
-    
-    
-      
-    
-    
-      
-        
-        
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
-      
-    
-    
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
-    
-      
-
-    
-    
-  </head>
-  
-  
-    <body dir="ltr">
-  
-    
-    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
-    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
-    <label class="md-overlay" for="__drawer"></label>
-    <div data-md-component="skip">
-      
-        
-        <a href="#15-inventario-y-surtidor-control-de-insumos-criticos" class="md-skip">
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Documentación de requerimientos de Chanaltín" name="description"/>
+<link href="https://hfoc11.github.io/specs/inventory-fuel/" rel="canonical"/>
+<link href="../trip-scheduling/" rel="prev"/>
+<link href="../gps-integration/" rel="next"/>
+<link href="../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.7.6" name="generator"/>
+<title>1.5 Inventario y Surtidor - Chanaltín Docs</title>
+<link href="../../assets/stylesheets/main.484c7ddc.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#15-inventario-y-surtidor-control-de-insumos-criticos">
           Skip to content
         </a>
-      
-    </div>
-    <div data-md-component="announce">
-      
-    </div>
-    
-    
-      
-
-  
-
+</div>
+<div data-md-component="announce">
+</div>
 <header class="md-header md-header--shadow" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Chanaltín Docs" class="md-header__button md-logo" aria-label="Chanaltín Docs" data-md-component="logo">
-      
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
-
-    </a>
-    <label class="md-header__button md-icon" for="__drawer">
-      
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
-    </label>
-    <div class="md-header__title" data-md-component="header-title">
-      <div class="md-header__ellipsis">
-        <div class="md-header__topic">
-          <span class="md-ellipsis">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="Chanaltín Docs" class="md-header__button md-logo" data-md-component="logo" href="../.." title="Chanaltín Docs">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
             Chanaltín Docs
           </span>
-        </div>
-        <div class="md-header__topic" data-md-component="header-topic">
-          <span class="md-ellipsis">
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
             
               1.5 Inventario y Surtidor
             
           </span>
-        </div>
-      </div>
-    </div>
-    
-    
-      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
-    
-    
-    
-      
-      
-        <label class="md-header__button md-icon" for="__search">
-          
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
-        </label>
-        <div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="__search"></label>
-  <div class="md-search__inner" role="search">
-    <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
-      <label class="md-search__icon md-icon" for="__search">
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
-      </label>
-      <nav class="md-search__options" aria-label="Search">
-        
-        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
-          
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
-        </button>
-      </nav>
-      
-    </form>
-    <div class="md-search__output">
-      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="search-result">
-          <div class="md-search-result__meta">
+</div>
+</div>
+</div>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
             Initializing search
           </div>
-          <ol class="md-search-result__list" role="presentation"></ol>
-        </div>
-      </div>
-    </div>
-  </div>
+<ol class="md-search-result__list" role="presentation"></ol>
 </div>
-      
-    
-    
-  </nav>
-  
+</div>
+</div>
+</div>
+</div>
+</nav>
 </header>
-    
-    <div class="md-container" data-md-component="container">
-      
-      
-        
-          
-        
-      
-      <main class="md-main" data-md-component="main">
-        <div class="md-main__inner md-grid">
-          
-            
-              
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-
-
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
-  <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Chanaltín Docs" class="md-nav__button md-logo" aria-label="Chanaltín Docs" data-md-component="logo">
-      
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
-
-    </a>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Chanaltín Docs" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="Chanaltín Docs">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
     Chanaltín Docs
   </label>
-  
-  <ul class="md-nav__list" data-md-scrollfix>
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+<span class="md-ellipsis">
     
   
     Home
@@ -212,39 +110,12 @@
 
     
   </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-    
-  
-  
-  
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+<span class="md-ellipsis">
     
   
     Especificaciones
@@ -252,35 +123,21 @@
 
     
   </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_2">
-            <span class="md-nav__icon md-icon"></span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
             
   
     Especificaciones
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../">
+<span class="md-ellipsis">
     
   
     Índice
@@ -288,27 +145,11 @@
 
     
   </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../trip-scheduling/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../trip-scheduling/">
+<span class="md-ellipsis">
     
   
     1. Programación de Viajes
@@ -316,36 +157,12 @@
 
     
   </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
     
   
     1.5 Inventario y Surtidor
@@ -353,17 +170,10 @@
 
     
   </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  
-  <span class="md-ellipsis">
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
     
   
     1.5 Inventario y Surtidor
@@ -371,113 +181,255 @@
 
     
   </span>
-  
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
+</a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#evaluacion-de-funcionalidad-nativa-odoo-v18">
+<span class="md-ellipsis">
       
-        <li class="md-nav__item">
-  <a href="#configuracion-de-sedes-y-almacenes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Configuración de Sedes y Almacenes
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#gestion-del-surtidor" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Gestión del Surtidor
+        Evaluacion de Funcionalidad Nativa Odoo v18
       
     </span>
-  </a>
-  
+</a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#configuracion-de-sedes-y-almacenes">
+<span class="md-ellipsis">
       
-        <li class="md-nav__item">
-  <a href="#desglose-de-kits-de-repuestos" class="md-nav__link">
-    <span class="md-ellipsis">
+        Configuracion de Sedes y Almacenes
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#gestion-del-surtidor">
+<span class="md-ellipsis">
+      
+        Gestion del Surtidor
+      
+    </span>
+</a>
+<nav aria-label="Gestion del Surtidor" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#unidades-de-medida-estrictas">
+<span class="md-ellipsis">
+      
+        Unidades de Medida Estrictas
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ingresos-masivos-al-tanque">
+<span class="md-ellipsis">
+      
+        Ingresos Masivos al Tanque
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#despacho-a-unidad">
+<span class="md-ellipsis">
+      
+        Despacho a Unidad
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#desglose-de-kits-de-repuestos">
+<span class="md-ellipsis">
       
         Desglose de Kits de Repuestos
       
     </span>
-  </a>
-  
-</li>
+</a>
+<nav aria-label="Desglose de Kits de Repuestos" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#reglas-de-registro">
+<span class="md-ellipsis">
       
-        <li class="md-nav__item">
-  <a href="#flujo-virtual-de-solicitud-y-aprobacion" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Flujo Virtual de Solicitud y Aprobación
+        Reglas de Registro
       
     </span>
-  </a>
-  
+</a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#desarrollo-propuesto">
+<span class="md-ellipsis">
       
-        <li class="md-nav__item">
-  <a href="#control-financiero-de-inventarios" class="md-nav__link">
-    <span class="md-ellipsis">
+        Desarrollo Propuesto
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#compras-urgentes-y-via-rapida">
+<span class="md-ellipsis">
+      
+        Compras Urgentes y Via Rapida
+      
+    </span>
+</a>
+<nav aria-label="Compras Urgentes y Via Rapida" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#flujo-operativo">
+<span class="md-ellipsis">
+      
+        Flujo Operativo
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#requerimiento-en-odoo">
+<span class="md-ellipsis">
+      
+        Requerimiento en Odoo
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#flujo-virtual-de-solicitud-y-aprobacion-en-arequipa">
+<span class="md-ellipsis">
+      
+        Flujo Virtual de Solicitud y Aprobacion en Arequipa
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#control-financiero-de-inventarios">
+<span class="md-ellipsis">
       
         Control Financiero de Inventarios
       
     </span>
-  </a>
-  
-</li>
+</a>
+<nav aria-label="Control Financiero de Inventarios" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#metodo-avco">
+<span class="md-ellipsis">
       
-        <li class="md-nav__item">
-  <a href="#vinculacion-con-centros-de-costo" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Vinculación con Centros de Costo
+        Metodo AVCO
       
     </span>
-  </a>
-  
+</a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bloqueo-de-stock-negativo">
+<span class="md-ellipsis">
       
-    </ul>
-  
+        Bloqueo de Stock Negativo
+      
+    </span>
+</a>
+</li>
+</ul>
 </nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#vinculacion-con-placa-taller-y-rentabilidad">
+<span class="md-ellipsis">
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../gps-integration/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+        Vinculacion con Placa, Taller y Rentabilidad
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#campos-tecnicos-propuestos">
+<span class="md-ellipsis">
+      
+        Campos Tecnicos Propuestos
+      
+    </span>
+</a>
+<nav aria-label="Campos Tecnicos Propuestos" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#extension-de-stockpicking">
+<span class="md-ellipsis">
+      
+        Extension de stock.picking
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#extension-de-stockmove-stockmoveline">
+<span class="md-ellipsis">
+      
+        Extension de stock.move / stock.move.line
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#extension-de-producttemplate">
+<span class="md-ellipsis">
+      
+        Extension de product.template
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#modelo-chanaltinfueldispatch">
+<span class="md-ellipsis">
+      
+        Modelo chanaltin.fuel.dispatch
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#reglas-de-negocio">
+<span class="md-ellipsis">
+      
+        Reglas de Negocio
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#consideraciones-de-implementacion">
+<span class="md-ellipsis">
+      
+        Consideraciones de Implementacion
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../gps-integration/">
+<span class="md-ellipsis">
     
   
     2. Integración GPS
@@ -485,27 +437,11 @@
 
     
   </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../dirty-data-kpis/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../dirty-data-kpis/">
+<span class="md-ellipsis">
     
   
     3. Data Sucia y KPIs
@@ -513,27 +449,11 @@
 
     
   </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../drivers-safety/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../drivers-safety/">
+<span class="md-ellipsis">
     
   
     4. Conductores y Seguridad
@@ -541,27 +461,11 @@
 
     
   </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../operational-checklists/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../operational-checklists/">
+<span class="md-ellipsis">
     
   
     5. Checklists Operativos
@@ -569,27 +473,11 @@
 
     
   </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../third-party-freight/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../third-party-freight/">
+<span class="md-ellipsis">
     
   
     6. Gestión de Terceros
@@ -597,34 +485,14 @@
 
     
   </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../diagrams/architecture/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../diagrams/architecture/">
+<span class="md-ellipsis">
     
   
     Diagramas
@@ -632,26 +500,11 @@
 
     
   </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../adr/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../adr/">
+<span class="md-ellipsis">
     
   
     ADRs
@@ -659,208 +512,925 @@
 
     
   </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-  </ul>
+</a>
+</li>
+</ul>
 </nav>
-                  </div>
-                </div>
-              </div>
-            
-            
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#evaluacion-de-funcionalidad-nativa-odoo-v18">
+<span class="md-ellipsis">
       
-        <li class="md-nav__item">
-  <a href="#configuracion-de-sedes-y-almacenes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Configuración de Sedes y Almacenes
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#gestion-del-surtidor" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Gestión del Surtidor
+        Evaluacion de Funcionalidad Nativa Odoo v18
       
     </span>
-  </a>
-  
+</a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#configuracion-de-sedes-y-almacenes">
+<span class="md-ellipsis">
       
-        <li class="md-nav__item">
-  <a href="#desglose-de-kits-de-repuestos" class="md-nav__link">
-    <span class="md-ellipsis">
+        Configuracion de Sedes y Almacenes
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#gestion-del-surtidor">
+<span class="md-ellipsis">
+      
+        Gestion del Surtidor
+      
+    </span>
+</a>
+<nav aria-label="Gestion del Surtidor" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#unidades-de-medida-estrictas">
+<span class="md-ellipsis">
+      
+        Unidades de Medida Estrictas
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ingresos-masivos-al-tanque">
+<span class="md-ellipsis">
+      
+        Ingresos Masivos al Tanque
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#despacho-a-unidad">
+<span class="md-ellipsis">
+      
+        Despacho a Unidad
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#desglose-de-kits-de-repuestos">
+<span class="md-ellipsis">
       
         Desglose de Kits de Repuestos
       
     </span>
-  </a>
-  
-</li>
+</a>
+<nav aria-label="Desglose de Kits de Repuestos" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#reglas-de-registro">
+<span class="md-ellipsis">
       
-        <li class="md-nav__item">
-  <a href="#flujo-virtual-de-solicitud-y-aprobacion" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Flujo Virtual de Solicitud y Aprobación
+        Reglas de Registro
       
     </span>
-  </a>
-  
+</a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#desarrollo-propuesto">
+<span class="md-ellipsis">
       
-        <li class="md-nav__item">
-  <a href="#control-financiero-de-inventarios" class="md-nav__link">
-    <span class="md-ellipsis">
+        Desarrollo Propuesto
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#compras-urgentes-y-via-rapida">
+<span class="md-ellipsis">
+      
+        Compras Urgentes y Via Rapida
+      
+    </span>
+</a>
+<nav aria-label="Compras Urgentes y Via Rapida" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#flujo-operativo">
+<span class="md-ellipsis">
+      
+        Flujo Operativo
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#requerimiento-en-odoo">
+<span class="md-ellipsis">
+      
+        Requerimiento en Odoo
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#flujo-virtual-de-solicitud-y-aprobacion-en-arequipa">
+<span class="md-ellipsis">
+      
+        Flujo Virtual de Solicitud y Aprobacion en Arequipa
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#control-financiero-de-inventarios">
+<span class="md-ellipsis">
       
         Control Financiero de Inventarios
       
     </span>
-  </a>
-  
-</li>
+</a>
+<nav aria-label="Control Financiero de Inventarios" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#metodo-avco">
+<span class="md-ellipsis">
       
-        <li class="md-nav__item">
-  <a href="#vinculacion-con-centros-de-costo" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Vinculación con Centros de Costo
+        Metodo AVCO
       
     </span>
-  </a>
-  
+</a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bloqueo-de-stock-negativo">
+<span class="md-ellipsis">
       
-    </ul>
-  
+        Bloqueo de Stock Negativo
+      
+    </span>
+</a>
+</li>
+</ul>
 </nav>
-                  </div>
-                </div>
-              </div>
-            
-          
-          
-            <div class="md-content" data-md-component="content">
-              
-              <article class="md-content__inner md-typeset">
-                
-                  
-
-
-
-<h1 id="15-inventario-y-surtidor-control-de-insumos-criticos">1.5. Inventario y Surtidor (Control de Insumos Críticos)</h1>
-<p>Objetivo: trazabilidad total de combustible y repuestos por unidad.</p>
-<h2 id="configuracion-de-sedes-y-almacenes">Configuración de Sedes y Almacenes</h2>
-<ul>
-<li>Almacenes físicos, por ejemplo Huara 80% y Arequipa 20%.</li>
-<li>Ubicaciones internas por repuestos, neumáticos, lubricantes y tanque de combustible.</li>
-</ul>
-<h2 id="gestion-del-surtidor">Gestión del Surtidor</h2>
-<ul>
-<li>Productos con unidades de medida estrictas: petróleo en galones y urea en litros.</li>
-<li>Registro de ingresos masivos en tanques.</li>
-<li>Despacho rápido ligado a placa y kilometraje.</li>
-</ul>
-<h2 id="desglose-de-kits-de-repuestos">Desglose de Kits de Repuestos</h2>
-<ul>
-<li>Recepción automática que desglosa kits en componentes individuales para control de saldos.</li>
-</ul>
-<h2 id="flujo-virtual-de-solicitud-y-aprobacion">Flujo Virtual de Solicitud y Aprobación</h2>
-<ul>
-<li>Solicitud virtual en Odoo.</li>
-<li>Validación por responsable en Huara antes del consumo en Arequipa.</li>
-</ul>
-<h2 id="control-financiero-de-inventarios">Control Financiero de Inventarios</h2>
-<ul>
-<li>Método AVCO, costo promedio ponderado.</li>
-<li>Bloqueo de stock negativo.</li>
-</ul>
-<h2 id="vinculacion-con-centros-de-costo">Vinculación con Centros de Costo</h2>
-<ul>
-<li>Cada salida genera un asiento contable afectando la cuenta analítica de la placa o centro de costo.</li>
-</ul>
-
-
-
-
-
-
-
-
-
-
-
-
-                
-              </article>
-            </div>
-          
-          
-<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
-        </div>
-        
-      </main>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#vinculacion-con-placa-taller-y-rentabilidad">
+<span class="md-ellipsis">
       
-        <footer class="md-footer">
-  
-  <div class="md-footer-meta md-typeset">
-    <div class="md-footer-meta__inner md-grid">
-      <div class="md-copyright">
+        Vinculacion con Placa, Taller y Rentabilidad
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#campos-tecnicos-propuestos">
+<span class="md-ellipsis">
+      
+        Campos Tecnicos Propuestos
+      
+    </span>
+</a>
+<nav aria-label="Campos Tecnicos Propuestos" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#extension-de-stockpicking">
+<span class="md-ellipsis">
+      
+        Extension de stock.picking
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#extension-de-stockmove-stockmoveline">
+<span class="md-ellipsis">
+      
+        Extension de stock.move / stock.move.line
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#extension-de-producttemplate">
+<span class="md-ellipsis">
+      
+        Extension de product.template
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#modelo-chanaltinfueldispatch">
+<span class="md-ellipsis">
+      
+        Modelo chanaltin.fuel.dispatch
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#reglas-de-negocio">
+<span class="md-ellipsis">
+      
+        Reglas de Negocio
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#consideraciones-de-implementacion">
+<span class="md-ellipsis">
+      
+        Consideraciones de Implementacion
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="15-inventario-y-surtidor-control-de-insumos-criticos">1.5. Inventario y Surtidor (Control de Insumos Criticos)</h1>
+<p>Objetivo: implementar trazabilidad total de combustible, urea, repuestos, llantas, lubricantes y compras urgentes por unidad, sede, orden de mantenimiento, viaje y cuenta analitica de placa.</p>
+<p>La Fase 1.5 debe partir de Odoo v18 nativo, pero con parametrizacion estricta y extensiones puntuales para evitar los problemas actuales: consumo sin registro previo, diferencias entre stock fisico y sistema, saldos negativos, kits con saldos fantasmas y combustible sin costo exacto por placa.</p>
+<h2 id="evaluacion-de-funcionalidad-nativa-odoo-v18">Evaluacion de Funcionalidad Nativa Odoo v18</h2>
+<p>Odoo ya provee una base solida para almacenes, ubicaciones, movimientos, compras y valorizacion. La personalizacion debe concentrarse en la disciplina operativa y en los campos que conectan cada consumo con la flota.</p>
+<p>Modelos nativos recomendados:</p>
+<ul>
+<li><code>stock.warehouse</code>: almacenes fisicos por sede, con codigos como <code>WH/HUA</code> y <code>WH/AQP</code>.</li>
+<li><code>stock.location</code>: ubicaciones internas jerarquicas por repuestos, llantas, lubricantes y surtidor.</li>
+<li><code>stock.picking</code>: documento operativo para recepciones, transferencias internas y salidas por consumo.</li>
+<li><code>stock.move</code>: movimiento de producto planificado y valorizado.</li>
+<li><code>stock.move.line</code>: detalle ejecutado del movimiento, cantidades reales, ubicacion, lote/serie y unidad de medida.</li>
+<li><code>stock.quant</code>: existencia fisica por producto, ubicacion, lote y cantidad disponible.</li>
+<li><code>stock.warehouse.orderpoint</code>: reglas de stock minimo para repuestos criticos.</li>
+<li><code>product.template</code> / <code>product.product</code>: maestro de productos almacenables, repuestos, combustibles, urea, llantas y componentes de kits.</li>
+<li><code>uom.uom</code>: unidades de medida. Diesel en galones y urea en litros, sin conversiones operativas.</li>
+<li><code>purchase.order</code> / <code>purchase.order.line</code>: ordenes de compra normales, compras urgentes y trazabilidad de recepcion.</li>
+<li><code>account.move</code> / <code>account.move.line</code>: factura de proveedor, valorizacion y asiento contable.</li>
+<li><code>analytic_distribution</code>: distribucion analitica en lineas de compra y contabilidad para cargar costos a placa, ruta o centro de costo.</li>
+<li><code>fleet.vehicle</code>: unidad receptora del consumo, placa, odometro y cuenta analitica.</li>
+<li><code>maintenance.request</code>: orden de taller vinculada al consumo de repuestos o a la compra urgente.</li>
+</ul>
+<h2 id="configuracion-de-sedes-y-almacenes">Configuracion de Sedes y Almacenes</h2>
+<p>Se deben configurar dos almacenes principales con tipos de operacion propios: recepciones, transferencias internas, salidas por consumo y ajustes autorizados.</p>
+<table>
+<thead>
+<tr>
+<th>Almacen</th>
+<th>Codigo</th>
+<th>Rol operativo</th>
+<th>Consideraciones</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Huara</td>
+<td><code>WH/HUA</code></td>
+<td>Sede central y aproximadamente 80% del stock</td>
+<td>Recepciona compras masivas, administra el surtidor principal de 10,000 galones y valida solicitudes de Arequipa.</td>
+</tr>
+<tr>
+<td>Arequipa</td>
+<td><code>WH/AQP</code></td>
+<td>Sede secundaria y aproximadamente 20% del stock</td>
+<td>Debe dejar de operar bajo consumo primero y reporte posterior. Requiere usuarios operativos y solicitud virtual previa.</td>
+</tr>
+</tbody>
+</table>
+<p>Ubicaciones internas minimas:</p>
+<ul>
+<li>Repuestos: filtros, piezas de motor, accesorios menores y componentes individuales de kits.</li>
+<li>Neumaticos: llantas nuevas, reencauchadas y bajas por descarte.</li>
+<li>Lubricantes: aceites, grasas, baldes y productos medidos por galon o unidad equivalente.</li>
+<li>Surtidor / Tanque: ubicacion exclusiva para diesel y urea. En Huara debe representar el tanque estacionario principal.</li>
+</ul>
+<div class="mermaid">graph TD
+    Company[Chanaltin SAC] --&gt; HUA[Almacen Huara - WH/HUA - 80%]
+    Company --&gt; AQP[Almacen Arequipa - WH/AQP - 20%]
+
+    subgraph WH_HUA [Sede Huara]
+        HUA --&gt; HUA_REP[Ubicacion: Repuestos]
+        HUA --&gt; HUA_LLA[Ubicacion: Neumaticos]
+        HUA --&gt; HUA_LUB[Ubicacion: Lubricantes]
+        HUA --&gt; HUA_SUR[Ubicacion: Surtidor / Tanque]
+    end
+
+    subgraph WH_AQP [Sede Arequipa]
+        AQP --&gt; AQP_REP[Ubicacion: Repuestos]
+        AQP --&gt; AQP_LLA[Ubicacion: Neumaticos]
+        AQP --&gt; AQP_LUB[Ubicacion: Lubricantes]
+    end
+
+    HUA_SUR -- Despacho diario --&gt; Vehicle((Unidad / Placa))
+    HUA_REP -- Consumo taller --&gt; Vehicle
+    AQP_REP -- Consumo taller --&gt; Vehicle
+
+    Vehicle --&gt; Analytic{Cuenta analitica por placa}
+    Analytic --&gt; Report[Reporte de rentabilidad por placa]
+</div>
+<h2 id="gestion-del-surtidor">Gestion del Surtidor</h2>
+<p>El surtidor es un control critico porque el combustible es uno de los costos de mayor impacto en la rentabilidad por placa.</p>
+<h3 id="unidades-de-medida-estrictas">Unidades de Medida Estrictas</h3>
+<ul>
+<li>Diesel: producto almacenable, comprado, almacenado y despachado exclusivamente en galones.</li>
+<li>Urea: producto almacenable, comprado, almacenado y despachado exclusivamente en litros.</li>
+<li>No debe permitirse que una orden de compra use una unidad y el despacho otra si eso introduce conversiones manuales o redondeos.</li>
+<li>En <code>product.template</code>, <code>uom_id</code> y <code>uom_po_id</code> deben coincidir para estos productos criticos.</li>
+</ul>
+<h3 id="ingresos-masivos-al-tanque">Ingresos Masivos al Tanque</h3>
+<ul>
+<li>Huara cuenta con un tanque aproximado de 10,000 galones.</li>
+<li>La compra tipica es de aproximadamente 9,000 galones cada 15 a 20 dias.</li>
+<li>La operacion puede representar alrededor de S/ 150,000 por abastecimiento.</li>
+<li>La recepcion debe vincular factura de proveedor, guia de remision y evidencia de recepcion fisica.</li>
+<li>Miller, como responsable de almacen, registra la recepcion en Odoo al momento de la descarga fisica para evitar saldos negativos posteriores.</li>
+</ul>
+<h3 id="despacho-a-unidad">Despacho a Unidad</h3>
+<p>Cada despacho debe ser rapido, pero obligatorio en datos:</p>
+<ul>
+<li>Placa / <code>fleet.vehicle</code> receptora.</li>
+<li>Conductor o responsable del abastecimiento, cuando aplique.</li>
+<li>Producto: diesel o urea.</li>
+<li>Cantidad despachada.</li>
+<li>Odometro actual de la unidad.</li>
+<li>Foto del odometro o evidencia equivalente mientras no exista integracion automatica.</li>
+<li>Viaje asociado (<code>chanaltin.trip</code>) si el despacho corresponde a una ruta programada.</li>
+<li>Cuenta analitica de la placa para afectar rentabilidad.</li>
+</ul>
+<p>La integracion futura con PRODCOM / FROTCOM debe sincronizar lecturas del surtidor, kilometraje y telemetria para detectar desviaciones de combustible.</p>
+<div class="mermaid">flowchart TD
+    A[Factura y guia de proveedor] --&gt; B[Recepcion stock.picking en WH/HUA]
+    B --&gt; C[Ingreso a ubicacion Surtidor / Tanque]
+    C --&gt; D[Stock disponible en stock.quant]
+    D --&gt; E{Despacho solicitado}
+    E --&gt; F[Seleccionar unidad / placa]
+    F --&gt; G[Registrar odometro y evidencia]
+    G --&gt; H{Stock suficiente?}
+    H -- No --&gt; H1[Bloquear salida y solicitar regularizacion]
+    H -- Si --&gt; I[Validar salida por consumo]
+    I --&gt; J[Crear stock.move / stock.move.line]
+    J --&gt; K[Imputar costo a cuenta analitica de placa]
+    K --&gt; L[Actualizar KPI km/galon y rentabilidad]
+</div>
+<h2 id="desglose-de-kits-de-repuestos">Desglose de Kits de Repuestos</h2>
+<p>Los kits no deben manejarse como un unico producto cuando el consumo real en taller ocurre por piezas. La regla de oro es: si el mecanico consume piezas individuales, el inventario debe registrar piezas individuales.</p>
+<h3 id="reglas-de-registro">Reglas de Registro</h3>
+<ul>
+<li>Cada componente del kit debe existir como <code>product.product</code> independiente.</li>
+<li>La orden de compra puede incluir el kit si el proveedor factura asi, pero la recepcion fisica debe desglosarlo en componentes.</li>
+<li>Si el proveedor entrega el detalle de componentes y costos, Odoo debe usar esos valores.</li>
+<li>Si no existe detalle del proveedor, el sistema debe permitir prorratear el costo total del kit entre componentes.</li>
+<li>La salida de almacen debe consumir solo las piezas realmente usadas.</li>
+<li>Las piezas retiradas y no usadas deben volver formalmente a stock.</li>
+<li>El costo de mantenimiento debe reflejar solo los componentes consumidos en la orden de trabajo.</li>
+</ul>
+<h3 id="desarrollo-propuesto">Desarrollo Propuesto</h3>
+<p>Crear un asistente o modelo de desglose para recepciones de kits:</p>
+<table>
+<thead>
+<tr>
+<th>Modelo / extension</th>
+<th>Campo</th>
+<th>Proposito</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>chanaltin.kit.breakdown</code></td>
+<td><code>purchase_order_id</code></td>
+<td>Orden de compra que origina el kit.</td>
+</tr>
+<tr>
+<td><code>chanaltin.kit.breakdown</code></td>
+<td><code>picking_id</code></td>
+<td>Recepcion donde se ingresaran los componentes.</td>
+</tr>
+<tr>
+<td><code>chanaltin.kit.breakdown</code></td>
+<td><code>kit_product_id</code></td>
+<td>Producto kit comprado o facturado.</td>
+</tr>
+<tr>
+<td><code>chanaltin.kit.breakdown</code></td>
+<td><code>total_cost</code></td>
+<td>Costo total a distribuir.</td>
+</tr>
+<tr>
+<td><code>chanaltin.kit.breakdown.line</code></td>
+<td><code>component_product_id</code></td>
+<td>Producto componente que entrara a stock.</td>
+</tr>
+<tr>
+<td><code>chanaltin.kit.breakdown.line</code></td>
+<td><code>component_qty</code></td>
+<td>Cantidad del componente recibido.</td>
+</tr>
+<tr>
+<td><code>chanaltin.kit.breakdown.line</code></td>
+<td><code>component_cost</code></td>
+<td>Costo unitario recibido o prorrateado.</td>
+</tr>
+<tr>
+<td><code>chanaltin.kit.breakdown.line</code></td>
+<td><code>cost_source</code></td>
+<td>Proveedor, prorrateo interno o ajuste autorizado.</td>
+</tr>
+</tbody>
+</table>
+<div class="mermaid">flowchart TD
+    A[Orden de compra con kit] --&gt; B[Recepcion fisica]
+    B --&gt; C{Proveedor entrega detalle?}
+    C -- Si --&gt; D[Usar componentes y costos del proveedor]
+    C -- No --&gt; E[Prorratear costo total del kit]
+    D --&gt; F[Crear lineas de componentes]
+    E --&gt; F
+    F --&gt; G[Validar ingreso por producto componente]
+    G --&gt; H[Actualizar stock real por pieza]
+    H --&gt; I[Consumo parcial en mantenimiento]
+    I --&gt; J[Costear solo piezas usadas]
+    H --&gt; K[Componentes no usados permanecen en stock]
+</div>
+<h2 id="compras-urgentes-y-via-rapida">Compras Urgentes y Via Rapida</h2>
+<p>Las compras urgentes ocurren cuando una unidad, camion o montacargas queda parada por falla critica. El flujo actual inicia por WhatsApp porque el tecnico suele identificar la pieza por foto, medida o muestra fisica, no por codigo de producto.</p>
+<h3 id="flujo-operativo">Flujo Operativo</h3>
+<ul>
+<li>Activador: unidad inoperativa por falla critica detectada al retorno, en taller o en ruta.</li>
+<li>Solicitante: mecanico o tecnico.</li>
+<li>Compras: Ana Rojas cotiza rapidamente con proveedores especializados.</li>
+<li>Pago: puede usarse caja chica de logistica cuando la urgencia no permite esperar el ciclo normal de pagos.</li>
+<li>Recepcion: Miller recibe fisicamente, sella recepcion y adjunta soporte.</li>
+<li>Regularizacion: contabilidad valida factura y sustento para reembolso o registro formal.</li>
+</ul>
+<h3 id="requerimiento-en-odoo">Requerimiento en Odoo</h3>
+<p>Se recomienda crear <code>chanaltin.urgent.purchase.request</code> o extender <code>purchase.order</code> con campos de via rapida.</p>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Tipo sugerido</th>
+<th>Proposito</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>is_urgent_purchase</code></td>
+<td>Boolean</td>
+<td>Identifica compra de emergencia.</td>
+</tr>
+<tr>
+<td><code>maintenance_request_id</code></td>
+<td>Many2one <code>maintenance.request</code></td>
+<td>Vincula la compra a la orden de taller.</td>
+</tr>
+<tr>
+<td><code>vehicle_id</code></td>
+<td>Many2one <code>fleet.vehicle</code></td>
+<td>Placa afectada y cuenta analitica destino.</td>
+</tr>
+<tr>
+<td><code>requested_by_id</code></td>
+<td>Many2one <code>res.users</code> / <code>hr.employee</code></td>
+<td>Tecnico o mecanico solicitante.</td>
+</tr>
+<tr>
+<td><code>buyer_id</code></td>
+<td>Many2one <code>res.users</code></td>
+<td>Responsable de compras.</td>
+</tr>
+<tr>
+<td><code>petty_cash_used</code></td>
+<td>Boolean</td>
+<td>Indica uso de caja chica.</td>
+</tr>
+<tr>
+<td><code>regularization_state</code></td>
+<td>Selection</td>
+<td>Pendiente, documentos recibidos, validado, observado, cerrado.</td>
+</tr>
+<tr>
+<td><code>evidence_attachment_ids</code></td>
+<td>Many2many <code>ir.attachment</code></td>
+<td>Fotos, capturas de WhatsApp, medidas y documentos.</td>
+</tr>
+<tr>
+<td><code>regularization_deadline</code></td>
+<td>Date</td>
+<td>Fecha maxima para completar sustento.</td>
+</tr>
+</tbody>
+</table>
+<div class="mermaid">sequenceDiagram
+    participant Tec as Tecnico / Mecanico
+    participant Odoo as Odoo
+    participant Compras as Compras - Ana
+    participant Alm as Almacen - Miller
+    participant Cont as Contabilidad
+
+    Tec-&gt;&gt;Odoo: Crea solicitud urgente con foto/medida
+    Odoo-&gt;&gt;Compras: Notifica requerimiento critico
+    Compras-&gt;&gt;Odoo: Registra proveedor, precio y caja chica si aplica
+    Odoo-&gt;&gt;Alm: Espera recepcion fisica
+    Alm-&gt;&gt;Odoo: Confirma ingreso y adjunta guia/foto
+    Odoo-&gt;&gt;Tec: Producto disponible para consumo
+    Tec-&gt;&gt;Odoo: Consume repuesto contra placa y orden de mantenimiento
+    Odoo-&gt;&gt;Cont: Envia factura/evidencia para regularizacion
+    Cont-&gt;&gt;Odoo: Valida documento y cierra regularizacion
+</div>
+<p>La via rapida no debe permitir consumos invisibles. Debe permitir comprar y recibir con urgencia, pero siempre dejar trazabilidad de placa, orden de mantenimiento, evidencia y responsable.</p>
+<h2 id="flujo-virtual-de-solicitud-y-aprobacion-en-arequipa">Flujo Virtual de Solicitud y Aprobacion en Arequipa</h2>
+<p>Arequipa debe abandonar el modelo de consumo primero y reporte despues. El flujo objetivo es solicitud, aprobacion, retiro fisico, confirmacion y asiento.</p>
+<p>Modelo propuesto: <code>chanaltin.material.request</code>.</p>
+<p>Campos clave:</p>
+<ul>
+<li><code>name</code>: folio de solicitud.</li>
+<li><code>warehouse_id</code>: almacen solicitante, normalmente <code>WH/AQP</code>.</li>
+<li><code>location_id</code>: ubicacion interna de origen.</li>
+<li><code>requested_by_id</code>: usuario operativo que solicita.</li>
+<li><code>approved_by_id</code>: responsable de aprobacion en Huara.</li>
+<li><code>vehicle_id</code>: placa o unidad receptora.</li>
+<li><code>maintenance_request_id</code>: orden de mantenimiento, si aplica.</li>
+<li><code>trip_id</code>: viaje asociado, si aplica.</li>
+<li><code>state</code>: borrador, solicitado, aprobado, rechazado, consumido, cancelado.</li>
+<li><code>line_ids</code>: productos, cantidades, unidad de medida y observaciones.</li>
+<li><code>evidence_attachment_ids</code>: foto, firma digital o sustento de retiro.</li>
+<li><code>stock_picking_id</code>: salida por consumo generada tras aprobacion.</li>
+</ul>
+<div class="mermaid">sequenceDiagram
+    participant AQP as Operativo Arequipa
+    participant Odoo as ERP Odoo
+    participant HUA as Responsable Huara - Miller
+    participant Cont as Contabilidad / AVCO
+
+    AQP-&gt;&gt;Odoo: Crea solicitud virtual de materiales
+    Odoo--&gt;&gt;HUA: Notifica solicitud pendiente
+    HUA-&gt;&gt;Odoo: Valida stock, placa y orden de mantenimiento
+    Note over Odoo: Bloqueo si stock disponible &lt; cantidad solicitada
+    HUA-&gt;&gt;Odoo: Aprueba salida
+    Odoo--&gt;&gt;AQP: Notifica aprobacion para retiro
+    AQP-&gt;&gt;Odoo: Confirma consumo con firma/foto
+    Odoo-&gt;&gt;Cont: Genera valorizacion y asiento 92 vs 25
+    Odoo-&gt;&gt;Cont: Actualiza costo promedio AVCO
+</div>
+<p>Si se integran chapas inteligentes o contenedores controlados, la aprobacion en Odoo debe ser el evento previo que autorice la apertura fisica.</p>
+<h2 id="control-financiero-de-inventarios">Control Financiero de Inventarios</h2>
+<p>El objetivo financiero es eliminar diferencias entre inventario fisico y sistema. En marzo de 2026 se identificaron diferencias de referencia por S/ 966 en Huara y S/ 1,553 en Arequipa; la causa raiz es la desconexion entre recepcion fisica, consumo real y regularizacion documentaria.</p>
+<h3 id="metodo-avco">Metodo AVCO</h3>
+<ul>
+<li>Configurar categorias de producto con costo promedio ponderado cuando aplique.</li>
+<li>AVCO es adecuado para repuestos, lubricantes y combustible donde el costo se promedia por ingresos sucesivos.</li>
+<li>La salida valorizada debe afectar la cuenta de existencias y el costo de servicio.</li>
+<li>Referencia contable esperada: Cuenta 25 Existencias contra Cuenta 92 Costo de Servicio, segun plan contable y configuracion local.</li>
+<li>Las lineas contables deben heredar la cuenta analitica de la placa o la distribucion analitica definida.</li>
+</ul>
+<h3 id="bloqueo-de-stock-negativo">Bloqueo de Stock Negativo</h3>
+<p>La salida por consumo no debe validarse si el stock real disponible en <code>stock.quant</code> es insuficiente.</p>
+<p>Esta regla corrige casos donde el repuesto se consume el dia 22, pero la factura se registra el dia 27. Para no detener operaciones ante emergencias, la via rapida debe crear el ingreso inmediato en Odoo antes del despacho, aunque la factura final se regularice despues.</p>
+<h2 id="vinculacion-con-placa-taller-y-rentabilidad">Vinculacion con Placa, Taller y Rentabilidad</h2>
+<p>Todo consumo debe conectar inventario con flota:</p>
+<ul>
+<li><code>fleet.vehicle</code> define la placa receptora.</li>
+<li>La placa debe tener una cuenta analitica o distribucion analitica por defecto.</li>
+<li><code>maintenance.request</code> permite asociar repuestos al trabajo de taller.</li>
+<li><code>chanaltin.trip</code> permite asociar combustible, urea o insumos al viaje.</li>
+<li><code>account.move.line</code> debe recibir la distribucion analitica para alimentar rentabilidad por placa.</li>
+</ul>
+<div class="mermaid">flowchart LR
+    Product[product.product] --&gt; Move[stock.move / stock.move.line]
+    Vehicle[fleet.vehicle] --&gt; Move
+    Maint[maintenance.request] --&gt; Move
+    Trip[chanaltin.trip] --&gt; Move
+    Move --&gt; Valuation[Valorizacion de inventario]
+    Valuation --&gt; Account[account.move.line]
+    Vehicle --&gt; Analytic[Cuenta analitica por placa]
+    Analytic --&gt; Account
+    Account --&gt; Profit[Rentabilidad por placa]
+</div>
+<h2 id="campos-tecnicos-propuestos">Campos Tecnicos Propuestos</h2>
+<h3 id="extension-de-stockpicking">Extension de <code>stock.picking</code></h3>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Tipo sugerido</th>
+<th>Uso</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>chanaltin_flow_type</code></td>
+<td>Selection</td>
+<td>Recepcion normal, consumo taller, despacho surtidor, compra urgente, solicitud Arequipa, retorno a stock.</td>
+</tr>
+<tr>
+<td><code>vehicle_id</code></td>
+<td>Many2one <code>fleet.vehicle</code></td>
+<td>Placa receptora cuando el picking representa consumo.</td>
+</tr>
+<tr>
+<td><code>maintenance_request_id</code></td>
+<td>Many2one <code>maintenance.request</code></td>
+<td>Orden de taller vinculada.</td>
+</tr>
+<tr>
+<td><code>trip_id</code></td>
+<td>Many2one <code>chanaltin.trip</code></td>
+<td>Viaje asociado al despacho de combustible o insumos.</td>
+</tr>
+<tr>
+<td><code>material_request_id</code></td>
+<td>Many2one <code>chanaltin.material.request</code></td>
+<td>Solicitud virtual que origina la salida.</td>
+</tr>
+<tr>
+<td><code>urgent_purchase_request_id</code></td>
+<td>Many2one <code>chanaltin.urgent.purchase.request</code></td>
+<td>Via rapida que origina la recepcion.</td>
+</tr>
+<tr>
+<td><code>evidence_attachment_ids</code></td>
+<td>Many2many <code>ir.attachment</code></td>
+<td>Fotos, guias, capturas y sustento.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="extension-de-stockmove-stockmoveline">Extension de <code>stock.move</code> / <code>stock.move.line</code></h3>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Tipo sugerido</th>
+<th>Uso</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>vehicle_id</code></td>
+<td>Many2one <code>fleet.vehicle</code></td>
+<td>Placa receptora de la linea de consumo.</td>
+</tr>
+<tr>
+<td><code>analytic_distribution</code></td>
+<td>Json / campo compatible con <code>analytic.mixin</code></td>
+<td>Distribucion del costo hacia placa o centro de costo.</td>
+</tr>
+<tr>
+<td><code>odometer_value</code></td>
+<td>Float</td>
+<td>Kilometraje capturado al despacho de combustible.</td>
+</tr>
+<tr>
+<td><code>engine_hours_value</code></td>
+<td>Float</td>
+<td>Horometro para montacargas o equipos por horas.</td>
+</tr>
+<tr>
+<td><code>is_fuel_dispatch</code></td>
+<td>Boolean</td>
+<td>Identifica despacho desde surtidor.</td>
+</tr>
+<tr>
+<td><code>fuel_dispatch_id</code></td>
+<td>Many2one <code>chanaltin.fuel.dispatch</code></td>
+<td>Registro especializado del abastecimiento.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="extension-de-producttemplate">Extension de <code>product.template</code></h3>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Tipo sugerido</th>
+<th>Uso</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>chanaltin_material_type</code></td>
+<td>Selection</td>
+<td>Diesel, urea, repuesto, llanta, lubricante, kit, componente de kit, servicio.</td>
+</tr>
+<tr>
+<td><code>strict_uom_control</code></td>
+<td>Boolean</td>
+<td>Impide diferencias entre <code>uom_id</code> y <code>uom_po_id</code> para productos criticos.</td>
+</tr>
+<tr>
+<td><code>is_critical_stock</code></td>
+<td>Boolean</td>
+<td>Activa seguimiento preventivo.</td>
+</tr>
+<tr>
+<td><code>critical_min_qty</code></td>
+<td>Float</td>
+<td>Minimo operacional para alertas.</td>
+</tr>
+<tr>
+<td><code>requires_vehicle_on_consumption</code></td>
+<td>Boolean</td>
+<td>Obliga placa en salidas.</td>
+</tr>
+<tr>
+<td><code>requires_odometer_on_consumption</code></td>
+<td>Boolean</td>
+<td>Obliga odometro para combustible.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="modelo-chanaltinfueldispatch">Modelo <code>chanaltin.fuel.dispatch</code></h3>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Tipo sugerido</th>
+<th>Uso</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>Char</td>
+<td>Folio de despacho.</td>
+</tr>
+<tr>
+<td><code>warehouse_id</code></td>
+<td>Many2one <code>stock.warehouse</code></td>
+<td>Almacen del surtidor.</td>
+</tr>
+<tr>
+<td><code>location_id</code></td>
+<td>Many2one <code>stock.location</code></td>
+<td>Ubicacion tanque.</td>
+</tr>
+<tr>
+<td><code>vehicle_id</code></td>
+<td>Many2one <code>fleet.vehicle</code></td>
+<td>Placa abastecida.</td>
+</tr>
+<tr>
+<td><code>driver_id</code></td>
+<td>Many2one <code>hr.employee</code></td>
+<td>Conductor o responsable.</td>
+</tr>
+<tr>
+<td><code>trip_id</code></td>
+<td>Many2one <code>chanaltin.trip</code></td>
+<td>Viaje relacionado.</td>
+</tr>
+<tr>
+<td><code>product_id</code></td>
+<td>Many2one <code>product.product</code></td>
+<td>Diesel o urea.</td>
+</tr>
+<tr>
+<td><code>quantity</code></td>
+<td>Float</td>
+<td>Cantidad despachada.</td>
+</tr>
+<tr>
+<td><code>uom_id</code></td>
+<td>Many2one <code>uom.uom</code></td>
+<td>Galones o litros estrictos.</td>
+</tr>
+<tr>
+<td><code>odometer_value</code></td>
+<td>Float</td>
+<td>Kilometraje de abastecimiento.</td>
+</tr>
+<tr>
+<td><code>stock_move_id</code></td>
+<td>Many2one <code>stock.move</code></td>
+<td>Movimiento valorizado.</td>
+</tr>
+<tr>
+<td><code>photo_odometer</code></td>
+<td>Binary / <code>ir.attachment</code></td>
+<td>Evidencia temporal hasta integracion GPS.</td>
+</tr>
+<tr>
+<td><code>source</code></td>
+<td>Selection</td>
+<td>Manual, PRODCOM, FROTCOM, importacion.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="reglas-de-negocio">Reglas de Negocio</h2>
+<table>
+<thead>
+<tr>
+<th>Regla</th>
+<th>Descripcion</th>
+<th>Accion del sistema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BR-INV-001</td>
+<td>Todo consumo de repuesto, combustible, urea, llanta o lubricante debe tener placa o centro de costo.</td>
+<td>Bloquear validacion del movimiento si falta <code>vehicle_id</code> o distribucion analitica.</td>
+</tr>
+<tr>
+<td>BR-INV-002</td>
+<td>Diesel usa galones y urea usa litros durante compra, inventario y despacho.</td>
+<td>Bloquear cambios de unidad en productos con <code>strict_uom_control</code>.</td>
+</tr>
+<tr>
+<td>BR-INV-003</td>
+<td>No se permiten salidas con stock negativo.</td>
+<td>Validar existencia en <code>stock.quant</code> antes de confirmar consumo.</td>
+</tr>
+<tr>
+<td>BR-INV-004</td>
+<td>Arequipa no puede consumir sin solicitud previa aprobada.</td>
+<td>Exigir <code>chanaltin.material.request</code> en salidas de <code>WH/AQP</code>.</td>
+</tr>
+<tr>
+<td>BR-INV-005</td>
+<td>El despacho de combustible requiere placa, cantidad y odometro.</td>
+<td>Bloquear <code>chanaltin.fuel.dispatch</code> si faltan datos obligatorios.</td>
+</tr>
+<tr>
+<td>BR-INV-006</td>
+<td>Toda recepcion masiva de combustible requiere factura, guia o evidencia de recepcion.</td>
+<td>Crear actividad pendiente si faltan adjuntos.</td>
+</tr>
+<tr>
+<td>BR-INV-007</td>
+<td>Los kits con consumo parcial deben entrar como componentes.</td>
+<td>Bloquear recepcion final de kits sin desglose aprobado.</td>
+</tr>
+<tr>
+<td>BR-INV-008</td>
+<td>La compra urgente debe regularizarse sin perder trazabilidad.</td>
+<td>Permitir via rapida, pero exigir placa, evidencia, responsable y estado de regularizacion.</td>
+</tr>
+<tr>
+<td>BR-INV-009</td>
+<td>Repuestos criticos deben tener stock minimo.</td>
+<td>Usar <code>stock.warehouse.orderpoint</code> y alertas de reposicion.</td>
+</tr>
+<tr>
+<td>BR-INV-010</td>
+<td>El costo debe alimentar rentabilidad por placa.</td>
+<td>Propagar cuenta analitica hacia <code>account.move.line</code> y reportes.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="consideraciones-de-implementacion">Consideraciones de Implementacion</h2>
+<ul>
+<li>Priorizar configuracion nativa antes de crear modelos paralelos: almacenes, ubicaciones, productos, unidades de medida, categorias, rutas de operacion, reglas de reabastecimiento y valorizacion.</li>
+<li>Crear modelos nuevos solo para flujos que Odoo no cubre de forma directa: solicitud virtual Arequipa, despacho especializado de surtidor, desglose de kits y via rapida de compras urgentes.</li>
+<li>Mantener los adjuntos en Odoo (<code>ir.attachment</code>) aunque exista SharePoint, para que el flujo operativo no dependa de buscar evidencia en otra plataforma.</li>
+<li>Evitar que contabilidad regularice dias despues sin recepcion previa; primero debe existir el movimiento fisico en Odoo y luego la factura puede completar el sustento.</li>
+<li>Toda automatizacion de GPS o surtidor debe escribir sobre registros operativos auditables, no reemplazar manualmente movimientos valorizados.</li>
+</ul>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
   
   
     Made with
-    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
       Material for MkDocs
     </a>
-  
 </div>
-      
-    </div>
-  </div>
+</div>
+</div>
 </footer>
-      
-    </div>
-    <div class="md-dialog" data-md-component="dialog">
-      <div class="md-dialog__inner md-typeset"></div>
-    </div>
-    
-    
-    
-      
-      
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
-    
-    
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
-      
-    
-  </body>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+<script type="module">import mermaid from "https://unpkg.com/mermaid@10.4.0/dist/mermaid.esm.min.mjs";
+mermaid.initialize({});</script></body>
 </html>
